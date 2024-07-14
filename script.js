@@ -142,3 +142,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const sliderContainer = document.querySelector('.slider-container');
+  const slides = document.querySelectorAll('.slide');
+
+  let currentIndex = 0;
+
+  function updateSlider() {
+      slides.forEach((slide, index) => {
+          if (index === currentIndex) {
+              slide.classList.add('active');
+          } else {
+              slide.classList.remove('active');
+          }
+      });
+      sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  function showNextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlider();
+  }
+
+  function startAutoSlide() {
+      setInterval(showNextSlide, 5000); // Change slide every 5 seconds
+  }
+
+  // Touch support for mobile devices
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  sliderContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+  });
+
+  sliderContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) {
+          showNextSlide();
+      } else if (touchEndX - touchStartX > 50) {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          updateSlider();
+      }
+  });
+
+  // Initialize the slider
+  updateSlider();
+  // Start automatic sliding
+  startAutoSlide();
+});

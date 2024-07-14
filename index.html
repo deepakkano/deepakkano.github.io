@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   
 </head>
 
@@ -18,10 +19,7 @@
   
   <div class="loader-container">
     <div class="loader"></div>
-    <script>
-      // Remove loading screen on page load
-
-    </script>
+   
   </div>
   <nav>
     <div class="logo">
@@ -45,7 +43,7 @@
   <script src="script.js"></script>
   <div class="div-container">
     <div class="image-container">
-      <img src="./assets/images/pic.png" alt="Descriptive text">
+      <img src="./assets/images/man.png" alt="Descriptive text">
       <p>Resourceful and innovative software developer specializing in Flutter and mobile
         application development with a Master's in Computer Application from Sardar Patel
         University. Experienced in collaborating with teams to deliver high-quality mobile
@@ -57,9 +55,27 @@
       <span class="text first-text">I'm a</span>
       <span class="text sec-text">Kanojiya Deepak</span>
       <div class="button-container">
-        <button class="btn">Github</button>
-        <button class="btn">Resume</button>
+       <a href="https://www.github.com/deepakkano"> <button class="btn" >Github</button></a>
+        <button class="btn" id="downloadBtn">Resume</button>
       </div>
+      <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // URL of the PDF file
+            var pdfUrl = 'doc/Deepak_Update_Resume.pdf';
+            
+            // Creating a temporary anchor element
+            var link = document.createElement('a');
+            link.href = pdfUrl;
+            
+            // Specify the filename for the download
+            link.download = 'Deepak_Update_Resume.pdf';
+            
+            // Append to the body, click programmatically, then remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+        </script>
     </div> 
     <script>
       const text = document.querySelector(".sec-text");
@@ -96,15 +112,19 @@
         <b>Flutter Developer Intern</b>
         <p>Tech Elecon</p>
         <p>Dec 2023 - April 2024</p>
-        <p>Collaborated with senior developers to integrate best practices in mobile application development.
-          Contributed to team projects by providing innovative solutions and enhancing application functionalities.</p>
+        <p>Collaborated with senior developers to integrate best practices in mobile application
+          development. Developed applications using <b>Flutter</b>, <b>Sqflite</b>, and <b>state management with GetX</b>
+          • Contributed to team projects by providing innovative solutions and enhancing application
+          functionalities.</p>
       </div>
       <div class="ex-details">
         <b>Mobile Application Developer (Flutter)</b>
         <p>Madrocket Technologies & Media</p>
         <p>Mar 2024 - April 2024</p>
-        <p>Led the development of mobile applications using FlutterFlow and Firebase, focusing on scalable and efficient solutions.
-          Designed and implemented RESTful APIs using FastAPI, improving data interaction and backend functionalities</p>
+        <p>Led the development of mobile applications using Flutter and <b>Firebase</b>, focusing on scalable and
+          efficient solutions with seamless API integration using FastAPI.
+          • Designed and implemented <b>RESTful APIs</b> using <b>FastAPI</b>, improving data interaction and
+          backend functionalities.</p>
       </div>
     </div>
   </div>
@@ -119,7 +139,7 @@
       <img src="./assets/images/css-3.png" alt="Image 2" class="image">
     </div>
     <div class="sk-image-container">
-      <img src="./assets/images/github copy.png" alt="Image 3" class="image">
+      <img src="./assets/images/github.png" alt="Image 3" class="image">
     </div>
     <div class="sk-image-container">
       <img src="./assets/images/html-5.png" alt="Image 4" class="image">
@@ -244,8 +264,9 @@ function positionOccupied(left, top, positions) {
                 <i class="fas fa-school"></i>
             </div>
             <div class="details">
-                <h2>SSC (10th)</h2>
-                <span>Year: 20XX - Institution Name</span>
+              <h2>Postgraduate Degree</h2>
+
+                <span>Year: 2024 -G H Patel PG Department of Computer Science and Technology ,Anand-388120 Gujarat</span>
             </div>
         </div>
         <div class="qualification">
@@ -253,8 +274,9 @@ function positionOccupied(left, top, positions) {
                 <i class="fas fa-graduation-cap"></i>
             </div>
             <div class="details">
-                <h2>HSC (12th)</h2>
-                <span>Year: 20XX - Institution Name</span>
+                <h2>Undergraduate Degree</h2>
+
+                <span>Year: 2022 - KBS Commerce and Nataraj Professional Sciences College, Vapi-396161 Gujarat</span>
             </div>
         </div>
         <div class="qualification">
@@ -262,8 +284,8 @@ function positionOccupied(left, top, positions) {
                 <i class="fas fa-university"></i>
             </div>
             <div class="details">
-                <h2>Undergraduate Degree</h2>
-                <span>Year: 20XX - Institution Name</span>
+              <h2>HSC (12th)</h2>
+              <span>Year: 2018 -Sarvajanik Vidyalaya Daman-396210 Daman and Diu</span>
             </div>
         </div>
         <div class="qualification">
@@ -271,8 +293,8 @@ function positionOccupied(left, top, positions) {
                 <i class="fas fa-user-graduate"></i>
             </div>
             <div class="details">
-                <h2>Postgraduate Degree</h2>
-                <span>Year: 20XX - Institution Name</span>
+              <h2>SSC (10th)</h2>
+              <span>Year: 2016- Shree Swaminarayan Vidyalaya Dabhel-396210 Daman and Diu</span>
             </div>
         </div>
     </div>
@@ -281,9 +303,9 @@ function positionOccupied(left, top, positions) {
         <h1>About Me</h1>
         <p>My name is Kanojiya Deepak. I have completed a 5-month internship as a Flutter developer from Tech Elecon Pvt Ltd. My role included writing clean code in Dart and performing CRUD operations. Apart from that, I have also worked with another company for 3 months as an intern where I created a demo application for clients using Flutter and Firebase and also created APIs for the application. My strengths include good communication, effective persuasion, and my ability to focus on the details.</p>
         <div class="social-icons">
-            <a href="#"><img src="./assets/images/instagram.png" alt="Instagram"></a>
-            <a href="#"><img src="./assets/images/linkedin.png" alt="LinkedIn"></a>
-            <a href="#"><img src="./assets/images/github.png" alt="GitHub"></a>
+            <a href="https://www.instagram.com/Kanojiya.deepak_/"><img src="./assets/images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/kanojiyadeepak/"><img src="./assets/images/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.github.com/deepakkano"><img src="./assets/images/github.png" alt="GitHub"></a>
             <a href="#"><img src="./assets/images/facebook.png" alt="Facebook"></a>
         </div>
         <a href="mailto:kanojiyadeepakkumar517@gmail.com" class="contact-btn">Email</a>
@@ -291,7 +313,44 @@ function positionOccupied(left, top, positions) {
     </div>
 </div>
   
-
+<div class="container">
+  <div class="certificate-slider">
+      <center><h1 class="heading">Certificate</h1></center>
+      <div class="slider-container">
+          <div class="slide">
+              <img src="/assets/images/cer1.png" alt="Certificate 1">
+              <div class="slide-info">Web Development Certification</div>
+          </div>
+          <div class="slide">
+              <img src="/assets/images/ddyoga1.jpg" alt="Certificate 2">
+              <div class="slide-info">JavaScript Advanced Course</div>
+          </div>
+          <div class="slide">
+              <img src="/assets/images/ddyoga2.jpg" alt="Certificate 3">
+              <div class="slide-info">UI/UX Design Fundamentals</div>
+          </div>
+          <div class="slide">
+              <img src="/assets/images/cer2.png" alt="Certificate 4">
+              <div class="slide-info">Web Development Certification</div>
+          </div>
+          <div class="slide">
+              <img src="/assets/images/IMG_20240101_204855388 (1).jpg" alt="Certificate 5">
+              <div class="slide-info">JavaScript Advanced Course</div>
+          </div>
+          <div class="slide">
+              <img src="/assets/images/cer3.png" alt="Certificate 6">
+              <div class="slide-info">Web Development Certification</div>
+          </div>
+          <div class="slide">
+              <img src="/assets/images/tech.jpg" alt="Certificate 7">
+              <div class="slide-info">JavaScript Advanced Course</div>
+          </div>
+      </div>
+  </div>
+</div>
+<script>
+  
+</script>
 
 <footer>
   <div class="footer-content">
