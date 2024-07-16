@@ -487,6 +487,7 @@ p {
   
   .heading {
     font-size: 45px;
+    
   }
 }
 
@@ -621,108 +622,140 @@ p {
   to {
     opacity: 1;
   }
-}
-
-
-
-
-.project-container {
+}     .portfolio {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 150px;
-  padding-right: 150px;
-  justify-content: center;
   gap: 20px;
-  margin-bottom: 100px;
-}
-.title {
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #333;
+  padding: 20px;
+  justify-content: center;
 }
 
-.project-card {
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: 300px;
-  transform: scale(1);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  animation: cardEnter 1s ease-out;
+.project {
   position: relative;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 15px;
+  width: 300px;
+  height: 400px;
+  transition: transform 0.3s ease;
 }
 
-.project-card img {
+.project:hover {
+  transform: scale(1.05);
+}
+
+.project-image {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.project-name {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  font-size: 1.5em;
+  border-radius: 5px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
   width: 100%;
-  display: block;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: none;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: popupAnim 0.3s ease-in-out;
+}
+
+@keyframes popupAnim {
+  from {transform: scale(0.7);}
+  to {transform: scale(1);}
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.slider {
+  display: flex;
+  overflow-x: hidden;
+  gap: 10px;
+}
+
+.slide {
+  min-width: 100%;
+  height: auto;
+  border-radius: 10px;
   transition: transform 0.5s ease;
 }
 
-.project-card:hover img {
-  transform: scale(1.1);
+.project-info {
+  margin-top: 20px;
+  font-size: 1.1em;
+  line-height: 1.6;
 }
 
-.project-card .project-title {
-  font-size: 1.5em;
-  margin: 15px;
-  transition: color 0.5s ease;
+h2 {
+  margin-top: 0;
 }
 
-.project-card .project-description {
-  font-size: 1em;
-  margin: 0 15px 20px;
-  color: #666;
-  transition: color 0.5s ease;
+.load-more-btn {
+  display: block;
+  margin: 40px auto;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.project-card:hover .project-title {
-  color: #FF6347;
-}
-
-.project-card:hover .project-description {
-  color: #333;
-}
-
-@keyframes cardEnter {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.load-more-btn:hover {
+  background-color: #0056b3;
 }
 
 @media (max-width: 768px) {
-  .project-container {
-    flex-direction: row;
-    align-items: center;
-    padding-left: 0px;
-    padding-right: 0px;
+  .project-image {
+      width: 100%;
+      height: auto;
+  }
+
+  .popup-content {
+      width: 90%;
   }
 }
-
-@media (max-width: 480px) {
-  .project-card {
-    width: 170px;
-    height: 270px;
-    /* max-width: 300px; */
-  }
-}
-
-
-
-
-
-
 /* Add this to your style.css */
 
 /* style.css */
@@ -902,7 +935,7 @@ p {
 
 .heading {
   margin: 20px 0;
-  color: #333;
+  /* color: #333; */
   text-align: center;
 }
 .slider-container {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Navbar</title>
+  <title>Kanojiya Deepak</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -226,32 +226,125 @@ function positionOccupied(left, top, positions) {
 
   </script>
       <center><h1 class="heading">Work</h1></center>
-      <div class="project-container">
-    
-    <div class="project-card">
-      <img src="https://via.placeholder.com/300" alt="Project Image 1">
-      <h2 class="project-title">Project One</h2>
-      <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="portfolio">
+        <div class="project" id="project1">
+            <img src="assets/images/login_pro1.png" alt="App UI 1" class="project-image">
+            <div class="project-name">FTP</div>
+        </div>
+
+        <div class="project" id="project2">
+            <img src="https://via.placeholder.com/300x200" alt="App UI 2" class="project-image">
+            <div class="project-name">App Name 2</div>
+        </div>
+
+        <div class="project" id="project3">
+            <img src="https://via.placeholder.com/300x200" alt="App UI 3" class="project-image">
+            <div class="project-name">App Name 3</div>
+        </div>
     </div>
-   
-    <div class="project-card">
-      <img src="https://via.placeholder.com/300" alt="Project Image 3">
-      <h2 class="project-title">Project Three</h2>
-      <p class="project-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+    <button class="load-more-btn">Load More Projects</button>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <div class="slider" id="projectslider">
+                <!-- Images will be inserted here by JavaScript -->
+            </div>
+            <div class="project-info" id="project-info">
+                <!-- Project info will be inserted here by JavaScript -->
+            </div>
+        </div>
     </div>
-    <div class="project-card">
-      <img src="https://via.placeholder.com/300" alt="Project Image 3">
-      <h2 class="project-title">Project Three</h2>
-      <p class="project-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-    </div>
-    <div class="project-card">
-      <img src="https://via.placeholder.com/300" alt="Project Image 3">
-      <h2 class="project-title">Project Three</h2>
-      <p class="project-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-    </div>
-    
-  
-  </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const projects = [
+                {
+                    id: 'project1',
+                    name: 'App Name 1',
+                    description: 'This is the complete description of project 1. It provides detailed information about the app, its features, technologies used, and any other relevant details.',
+                    images: [
+                        'https://via.placeholder.com/800x400',
+                        'https://via.placeholder.com/800x400',
+                        'https://via.placeholder.com/800x400'
+                    ]
+                },
+                {
+                    id: 'project2',
+                    name: 'App Name 2',
+                    description: 'This is the complete description of project 2. It provides detailed information about the app, its features, technologies used, and any other relevant details.',
+                    images: [
+                        'https://via.placeholder.com/800x400',
+                        'https://via.placeholder.com/800x400',
+                        'https://via.placeholder.com/800x400'
+                    ]
+                },
+                {
+                    id: 'project3',
+                    name: 'App Name 3',
+                    description: 'This is the complete description of project 3. It provides detailed information about the app, its features, technologies used, and any other relevant details.',
+                    images: [
+                        'https://via.placeholder.com/800x400',
+                        'https://via.placeholder.com/800x400',
+                        'https://via.placeholder.com/800x400'
+                    ]
+                }
+            ];
+
+            const popup = document.getElementById('popup');
+            const close = document.querySelector('.close');
+            const slider = document.getElementById('projectslider');
+            const projectInfo = document.getElementById('project-info');
+            let slideIndex = 0;
+            let slideInterval;
+
+            function showSlides() {
+                const slides = document.querySelectorAll('.slide');
+                slides.forEach((slide, index) => {
+                    slide.style.transform = `translateX(${(index - slideIndex) * 100}%)`;
+                });
+                slideIndex = (slideIndex + 1) % slides.length;
+            }
+
+            function startSlider() {
+                slideInterval = setInterval(showSlides, 3000);
+            }
+
+            function stopSlider() {
+                clearInterval(slideInterval);
+            }
+
+            projects.forEach(project => {
+                document.getElementById(project.id).addEventListener('click', function () {
+                    slider.innerHTML = '';
+                    projectInfo.innerHTML = `<h2>${project.name}</h2><p>${project.description}</p>`;
+                    project.images.forEach(image => {
+                        const img = document.createElement('img');
+                        img.src = image;
+                        img.className = 'slide';
+                        slider.appendChild(img);
+                    });
+                    slideIndex = 0;
+                    showSlides();
+                    startSlider();
+                    popup.style.display = 'block';
+                });
+            });
+
+            close.addEventListener('click', function () {
+                popup.style.display = 'none';
+                stopSlider();
+            });
+
+            window.addEventListener('click', function (event) {
+                if (event.target === popup) {
+                    popup.style.display = 'none';
+                    stopSlider();
+                }
+            });
+        });
+    </script>
   <center><h1 class="heading">About me</h1></center>
 
   <div class="about-container">
