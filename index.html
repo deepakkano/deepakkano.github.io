@@ -225,126 +225,146 @@ function positionOccupied(left, top, positions) {
 }
 
   </script>
-      <center><h1 class="heading">Work</h1></center>
+      <h1 class="heading">Work</h1>
       <div class="portfolio">
-        <div class="project" id="project1">
-            <img src="assets/images/login_pro1.png" alt="App UI 1" class="project-image">
-            <div class="project-name">FTP</div>
-        </div>
-
-        <div class="project" id="project2">
-            <img src="https://via.placeholder.com/300x200" alt="App UI 2" class="project-image">
-            <div class="project-name">App Name 2</div>
-        </div>
-
-        <div class="project" id="project3">
-            <img src="https://via.placeholder.com/300x200" alt="App UI 3" class="project-image">
-            <div class="project-name">App Name 3</div>
-        </div>
-    </div>
-
-    <button class="load-more-btn">Load More Projects</button>
-
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <div class="slider" id="projectslider">
-                <!-- Images will be inserted here by JavaScript -->
-            </div>
-            <div class="project-info" id="project-info">
-                <!-- Project info will be inserted here by JavaScript -->
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const projects = [
-                {
-                    id: 'project1',
-                    name: 'App Name 1',
-                    description: 'This is the complete description of project 1. It provides detailed information about the app, its features, technologies used, and any other relevant details.',
-                    images: [
-                        'https://via.placeholder.com/800x400',
-                        'https://via.placeholder.com/800x400',
-                        'https://via.placeholder.com/800x400'
-                    ]
-                },
-                {
-                    id: 'project2',
-                    name: 'App Name 2',
-                    description: 'This is the complete description of project 2. It provides detailed information about the app, its features, technologies used, and any other relevant details.',
-                    images: [
-                        'https://via.placeholder.com/800x400',
-                        'https://via.placeholder.com/800x400',
-                        'https://via.placeholder.com/800x400'
-                    ]
-                },
-                {
-                    id: 'project3',
-                    name: 'App Name 3',
-                    description: 'This is the complete description of project 3. It provides detailed information about the app, its features, technologies used, and any other relevant details.',
-                    images: [
-                        'https://via.placeholder.com/800x400',
-                        'https://via.placeholder.com/800x400',
-                        'https://via.placeholder.com/800x400'
-                    ]
-                }
-            ];
-
-            const popup = document.getElementById('popup');
-            const close = document.querySelector('.close');
-            const slider = document.getElementById('projectslider');
-            const projectInfo = document.getElementById('project-info');
-            let slideIndex = 0;
-            let slideInterval;
-
-            function showSlides() {
-                const slides = document.querySelectorAll('.slide');
-                slides.forEach((slide, index) => {
-                    slide.style.transform = `translateX(${(index - slideIndex) * 100}%)`;
-                });
-                slideIndex = (slideIndex + 1) % slides.length;
-            }
-
-            function startSlider() {
-                slideInterval = setInterval(showSlides, 3000);
-            }
-
-            function stopSlider() {
-                clearInterval(slideInterval);
-            }
-
-            projects.forEach(project => {
-                document.getElementById(project.id).addEventListener('click', function () {
-                    slider.innerHTML = '';
-                    projectInfo.innerHTML = `<h2>${project.name}</h2><p>${project.description}</p>`;
-                    project.images.forEach(image => {
-                        const img = document.createElement('img');
-                        img.src = image;
-                        img.className = 'slide';
-                        slider.appendChild(img);
-                    });
-                    slideIndex = 0;
-                    showSlides();
-                    startSlider();
-                    popup.style.display = 'block';
-                });
-            });
-
-            close.addEventListener('click', function () {
-                popup.style.display = 'none';
-                stopSlider();
-            });
-
-            window.addEventListener('click', function (event) {
-                if (event.target === popup) {
-                    popup.style.display = 'none';
-                    stopSlider();
-                }
-            });
-        });
-    </script>
+          <div class="project" id="project1">
+              <img src="https://picsum.photos/id/1/150/150" alt="App UI 1" class="project-image">
+              <div class="project-name">Finished Part Transfer(FPT)</div>
+          </div>
+  
+          <div class="project" id="project2">
+              <img src="https://picsum.photos/id/2/150/150" alt="App UI 2" class="project-image">
+              <div class="project-name">App Name 2</div>
+          </div>
+  
+          <div class="project" id="project3">
+              <img src="https://picsum.photos/id/3/150/150" alt="App UI 3" class="project-image">
+              <div class="project-name">App Name 3</div>
+          </div>
+      </div>
+  
+      <button class="load-more-btn">Load More Projects</button>
+  
+      <div id="popup" class="popup">
+          <div class="popup-content">
+              <span class="close">&times;</span>
+              <div class="slider-work" id="slider-work">
+                  <!-- Images will be inserted here by JavaScript -->
+              </div>
+              <div class="project-info" id="project-info">
+                  <!-- Project info will be inserted here by JavaScript -->
+              </div>
+          </div>
+      </div>
+  
+      <script>
+          document.addEventListener('DOMContentLoaded', function () {
+              const projects = [
+                  {
+                      id: 'project1',
+                      name: 'Finished Part Transfer (FPT)',
+                      description: `The Finished Part Transfer (FPT) Project is a revolutionary solution designed to transform manufacturing efficiency. In today's fast-paced industrial landscape, the seamless movement of finished parts from production lines to storage or shipping areas is crucial. Traditional methods involving paper-based systems or rudimentary computer programs have become obsolete, unable to meet the demands of modern manufacturing processes.
+  
+                      The FPT Project addresses these challenges by introducing a cutting-edge digital system that streamlines the entire transfer process. Utilizing advanced technologies such as Flutter for cross-platform mobile development and SQFlite for robust local data storage, the FPT application offers real-time tracking, error reduction, and significant time savings.
+  
+                      Key features of the FPT system include:
+  
+                      1. Real-time Tracking: Every finished part is assigned a unique identifier, allowing for instant location updates as it moves through the facility.
+                      2. Automated Workflows: The system suggests optimal transfer routes and methods, reducing human error and improving efficiency.
+                      3. Quality Control Integration: Built-in quality check points ensure that only parts meeting specified standards are transferred.
+                      4. Data Analytics: Comprehensive reporting tools provide insights into transfer patterns, bottlenecks, and areas for improvement.
+                      5. User-friendly Interface: An intuitive mobile application allows workers to easily manage transfers with minimal training.
+  
+                      The implementation of the FPT Project has shown remarkable results in pilot programs, with some facilities reporting up to a 40% reduction in transfer times and a 60% decrease in misplaced parts. This level of improvement not only boosts productivity but also significantly reduces costs associated with delays and errors.
+  
+                      Moreover, the FPT Project is designed with scalability in mind. Whether implemented in a small workshop or a large-scale manufacturing plant, the system can be tailored to meet specific needs and integrate seamlessly with existing ERP systems.
+  
+                      As manufacturing continues to evolve towards Industry 4.0 standards, solutions like the FPT Project will become increasingly vital. By embracing digital transformation in even the most fundamental processes, manufacturers can stay competitive in a rapidly changing global market.
+  
+                      The future development roadmap for the FPT Project includes integration with IoT devices for even more precise tracking, AI-powered predictive analytics to anticipate transfer needs, and expanded mobile capabilities to support remote management and monitoring.
+  
+                      In conclusion, the Finished Part Transfer Project represents a significant leap forward in manufacturing logistics. By addressing a critical yet often overlooked aspect of production, it paves the way for smarter, more efficient factories of the future.`,
+                      images: [
+                          'https://picsum.photos/id/10/800/600',
+                          'https://picsum.photos/id/20/800/600',
+                          'https://picsum.photos/id/30/800/600'
+                      ]
+                  },
+                  {
+                      id: 'project2',
+                      name: 'App Name 2',
+                      description: 'This is the complete description of project 2. It provides detailed information about the app, its features, technologies used, and any other relevant details.',
+                      images: [
+                          'https://picsum.photos/id/40/800/600',
+                          'https://picsum.photos/id/50/800/600',
+                          'https://picsum.photos/id/60/800/600'
+                      ]
+                  },
+                  {
+                      id: 'project3',
+                      name: 'App Name 3',
+                      description: 'This is the complete description of project 3. It provides detailed information about the app, its features, technologies used, and any other relevant details.',
+                      images: [
+                          'https://picsum.photos/id/70/800/600',
+                          'https://picsum.photos/id/80/800/600',
+                          'https://picsum.photos/id/90/800/600'
+                      ]
+                  }
+              ];
+  
+              const popup = document.getElementById('popup');
+              const close = document.querySelector('.close');
+              const slider = document.getElementById('slider-work');
+              const projectInfo = document.getElementById('project-info');
+              let slideIndex = 0;
+              let slideInterval;
+  
+              function showSlides() {
+                  const slides = document.querySelectorAll('.slide-work');
+                  slides.forEach((slide, index) => {
+                      slide.style.transform = `translateX(${(index - slideIndex) * 100}%)`;
+                  });
+                  slideIndex = (slideIndex + 1) % slides.length;
+              }
+  
+              function startSlider() {
+                  slideInterval = setInterval(showSlides, 3000);
+              }
+  
+              function stopSlider() {
+                  clearInterval(slideInterval);
+              }
+  
+              projects.forEach(project => {
+                  document.getElementById(project.id).addEventListener('click', function () {
+                      slider.innerHTML = '';
+                      projectInfo.innerHTML = `<h2>${project.name}</h2><p>${project.description}</p>`;
+                      project.images.forEach(image => {
+                          const img = document.createElement('img');
+                          img.src = image;
+                          img.className = 'slide-work';
+                          slider.appendChild(img);
+                      });
+                      slideIndex = 0;
+                      showSlides();
+                      startSlider();
+                      popup.style.display = 'block';
+                  });
+              });
+  
+              close.addEventListener('click', function () {
+                  popup.style.display = 'none';
+                  stopSlider();
+              });
+  
+              window.addEventListener('click', function (event) {
+                  if (event.target === popup) {
+                      popup.style.display = 'none';
+                      stopSlider();
+                  }
+              });
+          });
+      </script>
   <center><h1 class="heading">About me</h1></center>
 
   <div class="about-container">

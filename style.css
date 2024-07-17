@@ -159,7 +159,7 @@ nav {
 }
 
 h1 {
-  color: #333;
+  /* color: #333; */
   animation: fadeInDown 2s ease-in-out;
 }
 
@@ -385,7 +385,7 @@ p {
   /* margin-top: 100px; */
   animation: bounceInLeft 2s ease-in-out;
   transition: color 0.3s ease-in-out;
-  color:white;
+  /* color:white; */
 }
 
 .heading:hover {
@@ -622,7 +622,12 @@ p {
   to {
     opacity: 1;
   }
-}     .portfolio {
+}         .heading {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.portfolio {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -636,8 +641,6 @@ p {
   cursor: pointer;
   overflow: hidden;
   border-radius: 15px;
-  width: 300px;
-  height: 400px;
   transition: transform 0.3s ease;
 }
 
@@ -646,8 +649,8 @@ p {
 }
 
 .project-image {
-  width: 200px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   border-radius: 15px;
 }
@@ -659,7 +662,7 @@ p {
   color: white;
   background: rgba(0, 0, 0, 0.6);
   padding: 5px 10px;
-  font-size: 1.5em;
+  font-size: 1.2em;
   border-radius: 5px;
 }
 
@@ -706,15 +709,17 @@ p {
   cursor: pointer;
 }
 
-.slider {
+.slider-work {
   display: flex;
   overflow-x: hidden;
   gap: 10px;
 }
 
-.slide {
-  min-width: 100%;
-  height: auto;
+.slide-work {
+  min-width: 250px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
   border-radius: 10px;
   transition: transform 0.5s ease;
 }
@@ -723,6 +728,9 @@ p {
   margin-top: 20px;
   font-size: 1.1em;
   line-height: 1.6;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
 h2 {
@@ -748,12 +756,19 @@ h2 {
 
 @media (max-width: 768px) {
   .project-image {
-      width: 100%;
-      height: auto;
+      width: 120px;
+      height: 120px;
   }
 
   .popup-content {
-      width: 90%;
+      width: 95%;
+      max-width: 600px;
+  }
+
+  .slide-work {
+      min-width: 200px;
+      width: 200px;
+      height: 200px;
   }
 }
 /* Add this to your style.css */
