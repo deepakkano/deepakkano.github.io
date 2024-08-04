@@ -11,6 +11,7 @@ window.addEventListener('load', () => {
   loader.style.display = 'none';
 });
 
+
 document.addEventListener('DOMContentLoaded', function() {
   const canvas = document.getElementById('constellation');
   const ctx = canvas.getContext('2d');

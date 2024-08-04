@@ -60,17 +60,14 @@
       </div>
       <script>
         document.getElementById('downloadBtn').addEventListener('click', function() {
-            // URL of the PDF file
             var pdfUrl = 'doc/Deepak_Update_Resume.pdf';
             
-            // Creating a temporary anchor element
             var link = document.createElement('a');
             link.href = pdfUrl;
             
-            // Specify the filename for the download
+          
             link.download = 'Deepak_Update_Resume.pdf';
             
-            // Append to the body, click programmatically, then remove
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -97,6 +94,23 @@
   
       textLoad();
       setInterval(textLoad, 16000);
+
+
+      // Function to handle scroll event
+function handleScroll() {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', handleScroll);
+
+// Call handleScroll on page load
+handleScroll();
     </script>
   </div>
   
@@ -109,9 +123,10 @@
     </div>
     <div class="ex-red-div">
       <div class="ex-details">
-        <b>Flutter Developer Intern</b>
-        <p>Tech Elecon</p>
-        <p>Dec 2023 - April 2024</p>
+        <b>Flutter developer </b>
+        <p>Tech Elecon Pvt. Ltd. · Internship</p>
+        <p>Dec 2023 - Apr 2024 · 5 mos</p>
+        <p>Anand, Gujarat, India · Hybrid</p>
         <p>Collaborated with senior developers to integrate best practices in mobile application
           development. Developed applications using <b>Flutter</b>, <b>Sqflite</b>, and <b>state management with GetX</b>
           • Contributed to team projects by providing innovative solutions and enhancing application
@@ -120,7 +135,8 @@
       <div class="ex-details">
         <b>Mobile Application Developer (Flutter)</b>
         <p>Madrocket Technologies & Media</p>
-        <p>Mar 2024 - April 2024</p>
+        <p>Mar 2024 - May 2024 · 3 mos</p>
+        <p>Nagpur, Maharashtra, India · Remote</p>
         <p>Led the development of mobile applications using Flutter and <b>Firebase</b>, focusing on scalable and
           efficient solutions with seamless API integration using FastAPI.
           • Designed and implemented <b>RESTful APIs</b> using <b>FastAPI</b>, improving data interaction and
@@ -263,27 +279,7 @@ function positionOccupied(left, top, positions) {
                   {
                       id: 'project1',
                       name: 'Finished Part Transfer (FPT)',
-                      description: `The Finished Part Transfer (FPT) Project is a revolutionary solution designed to transform manufacturing efficiency. In today's fast-paced industrial landscape, the seamless movement of finished parts from production lines to storage or shipping areas is crucial. Traditional methods involving paper-based systems or rudimentary computer programs have become obsolete, unable to meet the demands of modern manufacturing processes.
-  
-                      The FPT Project addresses these challenges by introducing a cutting-edge digital system that streamlines the entire transfer process. Utilizing advanced technologies such as Flutter for cross-platform mobile development and SQFlite for robust local data storage, the FPT application offers real-time tracking, error reduction, and significant time savings.
-  
-                      Key features of the FPT system include:
-  
-                      1. Real-time Tracking: Every finished part is assigned a unique identifier, allowing for instant location updates as it moves through the facility.
-                      2. Automated Workflows: The system suggests optimal transfer routes and methods, reducing human error and improving efficiency.
-                      3. Quality Control Integration: Built-in quality check points ensure that only parts meeting specified standards are transferred.
-                      4. Data Analytics: Comprehensive reporting tools provide insights into transfer patterns, bottlenecks, and areas for improvement.
-                      5. User-friendly Interface: An intuitive mobile application allows workers to easily manage transfers with minimal training.
-  
-                      The implementation of the FPT Project has shown remarkable results in pilot programs, with some facilities reporting up to a 40% reduction in transfer times and a 60% decrease in misplaced parts. This level of improvement not only boosts productivity but also significantly reduces costs associated with delays and errors.
-  
-                      Moreover, the FPT Project is designed with scalability in mind. Whether implemented in a small workshop or a large-scale manufacturing plant, the system can be tailored to meet specific needs and integrate seamlessly with existing ERP systems.
-  
-                      As manufacturing continues to evolve towards Industry 4.0 standards, solutions like the FPT Project will become increasingly vital. By embracing digital transformation in even the most fundamental processes, manufacturers can stay competitive in a rapidly changing global market.
-  
-                      The future development roadmap for the FPT Project includes integration with IoT devices for even more precise tracking, AI-powered predictive analytics to anticipate transfer needs, and expanded mobile capabilities to support remote management and monitoring.
-  
-                      In conclusion, the Finished Part Transfer Project represents a significant leap forward in manufacturing logistics. By addressing a critical yet often overlooked aspect of production, it paves the way for smarter, more efficient factories of the future.`,
+                      description: 'Avabilble Soon',
                       images: [
                           'https://picsum.photos/id/10/800/600',
                           'https://picsum.photos/id/20/800/600',
@@ -293,7 +289,7 @@ function positionOccupied(left, top, positions) {
                   {
                       id: 'project2',
                       name: 'App Name 2',
-                      description: 'This is the complete description of project 2. It provides detailed information about the app, its features, technologies used, and any other relevant details.',
+                      description: 'Avabilble Soon',
                       images: [
                           'https://picsum.photos/id/40/800/600',
                           'https://picsum.photos/id/50/800/600',
@@ -303,7 +299,7 @@ function positionOccupied(left, top, positions) {
                   {
                       id: 'project3',
                       name: 'App Name 3',
-                      description: 'This is the complete description of project 3. It provides detailed information about the app, its features, technologies used, and any other relevant details.',
+                      description: 'Avabilble Soon',
                       images: [
                           'https://picsum.photos/id/70/800/600',
                           'https://picsum.photos/id/80/800/600',

@@ -1,4 +1,5 @@
 /* style.css */
+/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 * {
@@ -6,16 +7,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-
 }
+
 body {
   margin: 0;
-  padding: 0;
+  padding: 80px 0 0 0; /* Adjust this value based on your navbar height */
   background: black;
   color: white;
   overflow-x: hidden;
 }
-
 canvas#constellation {
   position: fixed;
   top: 0;
@@ -29,9 +29,6 @@ canvas#constellation {
   position: relative;
   z-index: 1;
 }
-
-/* You may need to adjust other styles to ensure good visibility against the dark background */
-
 
 /* Loading screen styles */
 .loader-container {
@@ -70,14 +67,25 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  /* background-color: #333; */
   color: #fff;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+nav.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.menu {
+  z-index: 999;
 }
 
 .menu ul li a:hover {
   color: red;
-  /* background-color: #444; */
 }
 
 .logo a {
@@ -101,7 +109,6 @@ nav {
 }
 
 .menu ul li a:hover {
-  /* background-color: #555; */
   transform: scale(1.1);
 }
 
@@ -123,10 +130,11 @@ nav {
   .menu {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: #333;
+    z-index: 998;
   }
 
   .menu.active {
@@ -156,10 +164,11 @@ nav {
   padding: 20px;
   flex-wrap: wrap;
   animation: fadeIn 2s ease-in-out;
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
-  /* color: #333; */
   animation: fadeInDown 2s ease-in-out;
 }
 
@@ -178,12 +187,8 @@ p {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeInDown {
@@ -220,12 +225,15 @@ p {
   overflow: hidden;
   text-align: center;
   animation: zoomIn 2s ease-in-out;
+  position: relative;
+  z-index: 2;
 }
 
-.image-container p{
+.image-container p {
   color: whitesmoke;
   font-size: 18px;
 }
+
 @keyframes zoomIn {
   from {
     transform: scale(0.8);
@@ -251,9 +259,6 @@ p {
   
   .text {
     padding: 15px 10px;
-  }
-
-  .text {
     font-size: 20px;
   }
 
@@ -282,18 +287,10 @@ p {
 }
 
 @keyframes colorChange {
-  0%, 100% {
-    color: #4070F4;
-  }
-  25% {
-    color: #FF5733;
-  }
-  50% {
-    color: #33FF57;
-  }
-  75% {
-    color: #3357FF;
-  }
+  0%, 100% { color: #4070F4; }
+  25% { color: #FF5733; }
+  50% { color: #33FF57; }
+  75% { color: #3357FF; }
 }
 
 @media (max-width: 480px) {
