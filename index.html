@@ -1,1246 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanojiya Deepak - Flutter Developer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanojiya Deepak</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  
 </head>
-<body>
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="loader">
-            <div class="loader-circle"></div>
-            <div class="loader-circle"></div>
-            <div class="loader-circle"></div>
-        </div><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanojiya Deepak - Flutter Developer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
-<body>
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="loader">
-            <div class="loader-circle"></div>
-            <div class="loader-circle"></div>
-            <div class="loader-circle"></div>
-        </div>
+
+<body><canvas id="constellation"></canvas>
+
+  <script>
+   
+  </script>
+  
+  <div class="loader-container">
+    <div class="loader"></div>
+   
+  </div>
+  <nav>
+    <div class="logo">
+      <a href="#">Kanojiya Deepak</a>
     </div>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Deepak<span>.dev</span></h2>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="theme-toggle" id="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg">
-            <div class="hero-shape shape-1"></div>
-            <div class="hero-shape shape-2"></div>
-            <div class="hero-shape shape-3"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <p class="hero-greeting">👋 Hello, I'm</p>
-                    <h1 class="hero-name">Kanojiya Deepak</h1>
-                    <h2 class="hero-title">Flutter Developer</h2>
-                    <p class="hero-description">
-                        Passionate Flutter Developer with expertise in building scalable, high-performance mobile applications. 
-                        Specialized in API integration, Firebase, and clean architecture with 2+ years of experience.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <span>View My Work</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="mailto:kanojiyadeepakkumar517@gmail.com" class="btn btn-secondary">
-                            <span>Get In Touch</span>
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <h3>2+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat">
-                            <h3>10+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat">
-                            <h3>5+</h3>
-                            <p>Apps Published</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="profile-card">
-                        <div class="profile-img">
-                            <div class="avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                        </div>
-                        <div class="floating-elements">
-                            <div class="floating-icon flutter">
-                                <i class="fab fa-flutter"></i>
-                            </div>
-                            <div class="floating-icon android">
-                                <i class="fab fa-android"></i>
-                            </div>
-                            <div class="floating-icon code">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="floating-icon mobile">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Social Links -->
-        <div class="social-sidebar">
-            <a href="#" class="social-link" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="#" class="social-link" title="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#" class="social-link" title="Stack Overflow">
-                <i class="fab fa-stack-overflow"></i>
-            </a>
-            <a href="mailto:kanojiyadeepakkumar517@gmail.com" class="social-link" title="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <div class="social-line"></div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Get to know me better</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Profile Summary</h3>
-                    <p>
-                        Passionate Flutter Developer at Kickhead Software Pvt. Ltd. with experience in building scalable, 
-                        high-performance apps using Flutter, Kotlin, and Swift. Skilled in API integration, Firebase, and 
-                        clean architecture, with a strong track record across domains like meditation, grocery delivery, 
-                        and education apps.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="highlight">
-                            <i class="fas fa-mobile-alt"></i>
-                            <div>
-                                <h4>Mobile Development</h4>
-                                <p>Expert in Flutter, Android & iOS development</p>
-                            </div>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-cloud"></i>
-                            <div>
-                                <h4>Backend Integration</h4>
-                                <p>Firebase, REST APIs, and cloud services</p>
-                            </div>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-cogs"></i>
-                            <div>
-                                <h4>State Management</h4>
-                                <p>GetX, BLoC, and Provider patterns</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="about-img-wrapper">
-                        <div class="about-img">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <div class="tech-orbit">
-                            <div class="orbit-item orbit-1">
-                                <i class="fab fa-flutter"></i>
-                            </div>
-                            <div class="orbit-item orbit-2">
-                                <i class="fab fa-android"></i>
-                            </div>
-                            <div class="orbit-item orbit-3">
-                                <i class="fas fa-fire"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Work Experience</h2>
-                <p class="section-subtitle">My professional journey</p>
-            </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#Skills">Skills</a></li>
+        <li><a href="#Aboutme">AboutMe</a></li>
+      </ul>
+    </div>
+    <div class="toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <script src="script.js"></script>
+  <div class="div-container">
+    <div class="image-container">
+      <img src="./assets/images/man.png" alt="Descriptive text">
+      <p>Resourceful and innovative software developer specializing in Flutter and mobile
+        application development with a Master's in Computer Application from Sardar Patel
+        University. Experienced in collaborating with teams to deliver high-quality mobile
+        applications, using modern technologies such as Flutter, Firebase, and FastAPI. Adept
+        at problem-solving and passionate about adopting new technologies to enhance user
+        experiences.</p>
+    </div>
+    <div class="name-container">
+      <span class="text first-text">I'm a</span>
+      <span class="text sec-text">Kanojiya Deepak</span>
+      <div class="button-container">
+       <a href="https://www.github.com/deepakkano"> <button class="btn" >Github</button></a>
+        <button class="btn" id="downloadBtn">Resume</button>
+      </div>
+      <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            var pdfUrl = 'doc/KanojiyaDeepak_resume.pdf';
             
-            <div class="experience-container">
-                <div class="experience-card current" data-aos="fade-up" data-aos-delay="100">
-                    <div class="experience-header">
-                        <div class="company-logo">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="experience-badge current-badge">Current</div>
-                    </div>
-                    <div class="experience-content">
-                        <h3>Associate Android Developer</h3>
-                        <h4>KickHead Softwares Pvt. Ltd.</h4>
-                        <div class="experience-duration">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>Aug 2024 – Present</span>
-                        </div>
-                        <div class="experience-description">
-                            <ul>
-                                <li>Developed and integrated a Courses module in a meditation app using Flutter (GetX, SharedPreferences, AudioPlayer)</li>
-                                <li>Worked on a Grocery Delivery App, performing UI fixes, screen development, FCM setup</li>
-                                <li>Built responsive UI adaptable to multiple screen sizes</li>
-                                <li>Implemented PDF watermarking using Kotlin and Swift with Flutter MethodChannels</li>
-                                <li>Successfully published multiple apps on Google Play Store and App Store</li>
-                            </ul>
-                        </div>
-                        <div class="experience-skills">
-                            <span class="skill-tag">Flutter</span>
-                            <span class="skill-tag">GetX</span>
-                            <span class="skill-tag">Firebase</span>
-                            <span class="skill-tag">Kotlin</span>
-                            <span class="skill-tag">Swift</span>
-                        </div>
-                    </div>
-                </div>
+            var link = document.createElement('a');
+            link.href = pdfUrl;
+            
+          
+            link.download = 'Deepak_Update_Resume.pdf';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+        </script>
+    </div> 
+    <script>
+      const text = document.querySelector(".sec-text");
+  
+      const textLoad = () => {
+        setTimeout(() => {
+          text.textContent = "MCA Graduate";
+        }, 0);
+        setTimeout(() => {
+          text.textContent = "Flutter Developer";
+        }, 4000);
+        setTimeout(() => {
+          text.textContent = "Web Developer";
+        }, 8000);
+        setTimeout(() => {
+          text.textContent = "Mobile Application Developer";
+        }, 12000);
+      };
+  
+      textLoad();
+      setInterval(textLoad, 16000);
 
-                <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="experience-header">
-                        <div class="company-logo">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                    </div>
-                    <div class="experience-content">
-                        <h3>Flutter Developer</h3>
-                        <h4>Madrocket Technologies & Media</h4>
-                        <div class="experience-duration">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>Mar – Apr 2024</span>
-                        </div>
-                        <div class="experience-description">
-                            <ul>
-                                <li>Led development of mobile applications using Flutter and Firebase</li>
-                                <li>Developed RESTful APIs with FastAPI</li>
-                                <li>Collaborated on UI/UX design using Figma</li>
-                                <li>Deployed APIs using FastAPI on Koyeb platform</li>
-                            </ul>
-                        </div>
-                        <div class="experience-skills">
-                            <span class="skill-tag">Flutter</span>
-                            <span class="skill-tag">FastAPI</span>
-                            <span class="skill-tag">Firebase</span>
-                            <span class="skill-tag">Figma</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="experience-header">
-                        <div class="company-logo">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                    </div>
-                    <div class="experience-content">
-                        <h3>Flutter Developer Intern</h3>
-                        <h4>Tech Elecon Pvt Ltd</h4>
-                        <div class="experience-duration">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>Dec 2023 – Apr 2024</span>
-                        </div>
-                        <div class="experience-description">
-                            <ul>
-                                <li>Collaborated with senior developers on mobile app development best practices</li>
-                                <li>Created applications using Flutter, Sqflite, and GetX state management</li>
-                                <li>Implemented role-based authentication and access control</li>
-                                <li>Integrated external APIs like EmailJS for enhanced functionality</li>
-                            </ul>
-                        </div>
-                        <div class="experience-skills">
-                            <span class="skill-tag">Flutter</span>
-                            <span class="skill-tag">SQLite</span>
-                            <span class="skill-tag">GetX</span>
-                            <span class="skill-tag">EmailJS</span>
-                        </div>
-                    </div>
-                </div>
+      // Function to handle scroll event
+function handleScroll() {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', handleScroll);
+
+// Call handleScroll on page load
+handleScroll();
+    </script>
+  </div>
+  
+  
+  
+  <div id="experience" class="ex-container">
+    <div class="ex-content">
+      <center><h1 class="heading">Experience</h1></center>
+      <img src="assets/images/ex.png" alt="Sample Image">
+    </div>
+    <div class="ex-red-div">
+      <div class="ex-details">
+        <b>Flutter developer </b>
+        <p>Tech Elecon Pvt. Ltd. · Internship</p>
+        <p>Dec 2023 - Apr 2024 · 5 mos</p>
+        <p>Anand, Gujarat, India · Hybrid</p>
+        <p>Collaborated with senior developers to integrate best practices in mobile application
+          development. Developed applications using <b>Flutter</b>, <b>Sqflite</b>, and <b>state management with GetX</b>
+          • Contributed to team projects by providing innovative solutions and enhancing application
+          functionalities.</p>
+      </div>
+      <div class="ex-details">
+        <b>Mobile Application Developer (Flutter)</b>
+        <p>Madrocket Technologies & Media</p>
+        <p>Mar 2024 - May 2024 · 3 mos</p>
+        <p>Nagpur, Maharashtra, India · Remote</p>
+        <p>Led the development of mobile applications using Flutter and <b>Firebase</b>, focusing on scalable and
+          efficient solutions with seamless API integration using FastAPI.
+          • Designed and implemented <b>RESTful APIs</b> using <b>FastAPI</b>, improving data interaction and
+          backend functionalities.</p>
+      </div>
+    </div>
+  </div>
+  
+  <center><h1 class="heading">Skills</h1></center>
+
+  <div id="Skills" class="green-div">
+    <div class="sk-image-container">
+      <img src="./assets/images/app-development.png" alt="Image 1" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/css-3.png" alt="Image 2" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/github.png" alt="Image 3" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/html-5.png" alt="Image 4" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/java.png" alt="Image 5" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/js.png" alt="Image 6" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/mysql.png" alt="Image 7" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/php.png" alt="Image 8" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/python.png" alt="Image 9" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/wordpress.png" alt="Image 10" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/world-wide-web.png" alt="Image 11" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/pngwing.com.png" alt="Image 11" class="image">
+    </div><div class="sk-image-container">
+      <img src="./assets/images/pngwing.com (1).png" alt="Image 11" class="image">
+    </div><div class="sk-image-container">
+      <img src="./assets/images/bloc.png" alt="Image 11" class="image">
+    </div><div class="sk-image-container">
+      <img src="./assets/images/getx.png" alt="Image 11" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/pngegg.png" alt="Image 11" class="image">
+    </div><div class="sk-image-container">
+      <img src="./assets/images/FastAPI.png" alt="Image 11" class="image">
+    </div><div class="sk-image-container">
+      <img src="./assets/images/integration.png" alt="Image 11" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/pngegg (1).png" alt="Image 11" class="image">
+    </div><div class="sk-image-container">
+      <img src="./assets/images/pngegg (2).png" alt="Image 11" class="image">
+    </div><div class="sk-image-container">
+      <img src="./assets/images/pngegg (3).png" alt="Image 11" class="image">
+    </div>
+    <div class="sk-image-container">
+      <img src="./assets/images/android-studio-icon.png" alt="Image 11" class="image">
+    </div>
+  </div>
+  </div><script>
+document.addEventListener("DOMContentLoaded", function() {
+  const containers = document.querySelectorAll(".sk-image-container");
+  const maxWidth = document.querySelector(".green-div").clientWidth;
+  const maxHeight = 850; // Adjust this to match the height of your container
+
+  const positions = []; // Array to store occupied positions
+
+  containers.forEach(container => {
+    let attempts = 0;
+    let left, top;
+    
+    do {
+      left = Math.floor(Math.random() * (maxWidth - 120)); // Adjust 120 to the width of your container
+      top = Math.floor(Math.random() * (maxHeight - 120)); // Adjust 850 to the height of your container
+      attempts++;
+    } while (positionOccupied(left, top, positions) && attempts < 100); // Limit the number of attempts
+
+    container.style.left = `${left}px`;
+    container.style.top = `${top}px`;
+    positions.push({ left, top });
+  });
+});
+
+function positionOccupied(left, top, positions) {
+  // Check if the position is too close to any existing position
+  return positions.some(position => {
+    const distance = Math.sqrt((position.left - left) ** 2 + (position.top - top) ** 2);
+    return distance < 120; // Adjust this value to set the minimum distance between images
+  });
+}
+
+  </script>
+      <h1 class="heading">Work</h1>
+      <div class="portfolio">
+          <div class="project" id="project1">
+              <img src="https://picsum.photos/id/1/150/150" alt="App UI 1" class="project-image">
+              <div class="project-name">Finished Part Transfer(FPT)</div>
+          </div>
+  
+          <div class="project" id="project2">
+              <img src="https://picsum.photos/id/2/150/150" alt="App UI 2" class="project-image">
+              <div class="project-name">App Name 2</div>
+          </div>
+  
+          <div class="project" id="project3">
+              <img src="https://picsum.photos/id/3/150/150" alt="App UI 3" class="project-image">
+              <div class="project-name">App Name 3</div>
+          </div>
+      </div>
+  
+      <button class="load-more-btn">Load More Projects</button>
+  
+      <div id="popup" class="popup">
+          <div class="popup-content">
+              <span class="close">&times;</span>
+              <div class="slider-work" id="slider-work">
+                  <!-- Images will be inserted here by JavaScript -->
+              </div>
+              <div class="project-info" id="project-info">
+                  <!-- Project info will be inserted here by JavaScript -->
+              </div>
+          </div>
+      </div>
+  
+      <script>
+          document.addEventListener('DOMContentLoaded', function () {
+              const projects = [
+                  {
+                      id: 'project1',
+                      name: 'Finished Part Transfer (FPT)',
+                      description: 'Avabilble Soon',
+                      images: [
+                          'https://picsum.photos/id/10/800/600',
+                          'https://picsum.photos/id/20/800/600',
+                          'https://picsum.photos/id/30/800/600'
+                      ]
+                  },
+                  {
+                      id: 'project2',
+                      name: 'App Name 2',
+                      description: 'Avabilble Soon',
+                      images: [
+                          'https://picsum.photos/id/40/800/600',
+                          'https://picsum.photos/id/50/800/600',
+                          'https://picsum.photos/id/60/800/600'
+                      ]
+                  },
+                  {
+                      id: 'project3',
+                      name: 'App Name 3',
+                      description: 'Avabilble Soon',
+                      images: [
+                          'https://picsum.photos/id/70/800/600',
+                          'https://picsum.photos/id/80/800/600',
+                          'https://picsum.photos/id/90/800/600'
+                      ]
+                  }
+              ];
+  
+              const popup = document.getElementById('popup');
+              const close = document.querySelector('.close');
+              const slider = document.getElementById('slider-work');
+              const projectInfo = document.getElementById('project-info');
+              let slideIndex = 0;
+              let slideInterval;
+  
+              function showSlides() {
+                  const slides = document.querySelectorAll('.slide-work');
+                  slides.forEach((slide, index) => {
+                      slide.style.transform = `translateX(${(index - slideIndex) * 100}%)`;
+                  });
+                  slideIndex = (slideIndex + 1) % slides.length;
+              }
+  
+              function startSlider() {
+                  slideInterval = setInterval(showSlides, 3000);
+              }
+  
+              function stopSlider() {
+                  clearInterval(slideInterval);
+              }
+  
+              projects.forEach(project => {
+                  document.getElementById(project.id).addEventListener('click', function () {
+                      slider.innerHTML = '';
+                      projectInfo.innerHTML = `<h2>${project.name}</h2><p>${project.description}</p>`;
+                      project.images.forEach(image => {
+                          const img = document.createElement('img');
+                          img.src = image;
+                          img.className = 'slide-work';
+                          slider.appendChild(img);
+                      });
+                      slideIndex = 0;
+                      showSlides();
+                      startSlider();
+                      popup.style.display = 'block';
+                  });
+              });
+  
+              close.addEventListener('click', function () {
+                  popup.style.display = 'none';
+                  stopSlider();
+              });
+  
+              window.addEventListener('click', function (event) {
+                  if (event.target === popup) {
+                      popup.style.display = 'none';
+                      stopSlider();
+                  }
+              });
+          });
+      </script>
+  <center><h1 class="heading">About me</h1></center>
+
+  <div class="about-container">
+
+    <div class="section education">
+        <center><h1 class="heading">My Education Qualifications</h1></center>
+
+        <div class="qualification">
+            <div class="icon">
+                <i class="fas fa-school"></i>
+            </div>
+            <div class="details">
+              <h2>Postgraduate Degree</h2>
+
+                <span>Year: 2024 -G H Patel PG Department of Computer Science and Technology ,Anand-388120 Gujarat</span>
             </div>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-subtitle">Technologies I work with</p>
+        <div class="qualification">
+            <div class="icon">
+                <i class="fas fa-graduation-cap"></i>
             </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>Mobile Development</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-flutter"></i>
-                            <span>Flutter</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-android"></i>
-                            <span>Android</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>Dart</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-java"></i>
-                            <span>Kotlin</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-swift"></i>
-                            <span>Swift</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-cogs"></i>
-                        <h3>State Management</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-cube"></i>
-                            <span>GetX</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-layer-group"></i>
-                            <span>BLoC</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-stream"></i>
-                            <span>Provider</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-tools"></i>
-                        <h3>Tools & Frameworks</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-fire"></i>
-                            <span>Firebase</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code-branch"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>SQLite</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-rocket"></i>
-                            <span>FastAPI</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="details">
+                <h2>Undergraduate Degree</h2>
+
+                <span>Year: 2022 - KBS Commerce and Nataraj Professional Sciences College, Vapi-396161 Gujarat</span>
             </div>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Some of my recent work</p>
+        <div class="qualification">
+            <div class="icon">
+                <i class="fas fa-university"></i>
             </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>VVN Eats Application</h3>
-                            <span class="project-type">Mobile App</span>
-                        </div>
-                        <button class="project-toggle" onclick="toggleProject('project1')">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                    <p class="project-brief">
-                        Mobile application to streamline menu access, allowing students to view daily menus from all dining halls in one place.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Dart</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">BLoC</span>
-                    </div>
-                    
-                    <div class="project-details" id="project1">
-                        <div class="project-info">
-                            <div class="info-section">
-                                <h4><i class="fas fa-calendar"></i> Duration</h4>
-                                <p>November 2023</p>
-                            </div>
-                            <div class="info-section">
-                                <h4><i class="fas fa-bullseye"></i> Key Features</h4>
-                                <ul>
-                                    <li>Real-time menu updates from multiple dining halls</li>
-                                    <li>User-friendly interface with BLoC state management</li>
-                                    <li>Firebase backend integration</li>
-                                    <li>Eliminated the need to visit each dining hall individually</li>
-                                    <li>Enhanced daily convenience for students</li>
-                                </ul>
-                            </div>
-                            <div class="info-section">
-                                <h4><i class="fas fa-images"></i> Project Gallery</h4>
-                                <div class="project-gallery">
-                                    <div class="gallery-grid">
-                                        <div class="gallery-item" onclick="openLightbox('vvn-gallery', 0)">
-                                            <img src="/placeholder.svg?height=300&width=200" alt="VVN Eats Home Screen">
-                                            <div class="gallery-overlay">
-                                                <i class="fas fa-search-plus"></i>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-item" onclick="openLightbox('vvn-gallery', 1)">
-                                            <img src="/placeholder.svg?height=300&width=200" alt="VVN Eats Menu Screen">
-                                            <div class="gallery-overlay">
-                                                <i class="fas fa-search-plus"></i>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-item" onclick="openLightbox('vvn-gallery', 2)">
-                                            <img src="/placeholder.svg?height=300&width=200" alt="VVN Eats Details Screen">
-                                            <div class="gallery-overlay">
-                                                <i class="fas fa-search-plus"></i>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-item" onclick="openLightbox('vvn-gallery', 3)">
-                                            <img src="/placeholder.svg?height=300&width=200" alt="VVN Eats Profile Screen">
-                                            <div class="gallery-overlay">
-                                                <i class="fas fa-search-plus"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    <span>View Code</span>
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Live Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Finished Part Transfer (FPT)</h3>
-                            <span class="project-type">Enterprise App</span>
-                        </div>
-                        <button class="project-toggle" onclick="toggleProject('project2')">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                    <p class="project-brief">
-                        Modernizing finished part movement in manufacturing using Flutter and SQLite for real-time tracking and coordination.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">SQLite</span>
-                        <span class="tech-tag">Barcode Scanner</span>
-                        <span class="tech-tag">GetX</span>
-                    </div>
-                    
-                    <div class="project-details" id="project2">
-                        <div class="project-info">
-                            <div class="info-section">
-                                <h4><i class="fas fa-calendar"></i> Duration</h4>
-                                <p>December 2023 - April 2024</p>
-                            </div>
-                            <div class="info-section">
-                                <h4><i class="fas fa-bullseye"></i> Key Features</h4>
-                                <ul>
-                                    <li>Role-based access control and authentication</li>
-                                    <li>Advanced barcode scanning functionality</li>
-                                    <li>Real-time tracking and coordination</li>
-                                    <li>Offline data storage with SQLite</li>
-                                    <li>Replaced traditional paper-based methods</li>
-                                </ul>
-                            </div>
-                            <div class="info-section">
-                                <h4><i class="fas fa-images"></i> Project Gallery</h4>
-                                <div class="project-gallery">
-                                    <div class="gallery-grid">
-                                        <div class="gallery-item" onclick="openLightbox('fpt-gallery', 0)">
-                                            <img src="/placeholder.svg?height=300&width=200" alt="FPT Login Screen">
-                                            <div class="gallery-overlay">
-                                                <i class="fas fa-search-plus"></i>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-item" onclick="openLightbox('fpt-gallery', 1)">
-                                            <img src="/placeholder.svg?height=300&width=200" alt="FPT Scanner Screen">
-                                            <div class="gallery-overlay">
-                                                <i class="fas fa-search-plus"></i>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-item" onclick="openLightbox('fpt-gallery', 2)">
-                                            <img src="/placeholder.svg?height=300&width=200" alt="FPT Dashboard">
-                                            <div class="gallery-overlay">
-                                                <i class="fas fa-search-plus"></i>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-item" onclick="openLightbox('fpt-gallery', 3)">
-                                            <img src="/placeholder.svg?height=300&width=200" alt="FPT Reports Screen">
-                                            <div class="gallery-overlay">
-                                                <i class="fas fa-search-plus"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    <span>View Code</span>
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Live Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="details">
+              <h2>HSC (12th)</h2>
+              <span>Year: 2018 -Sarvajanik Vidyalaya Daman-396210 Daman and Diu</span>
             </div>
         </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Education & Certificates</h2>
-                <p class="section-subtitle">My academic background</p>
+        <div class="qualification">
+            <div class="icon">
+                <i class="fas fa-user-graduate"></i>
             </div>
-            <div class="education-content">
-                <div class="education-grid">
-                    <div class="education-card">
-                        <div class="education-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="education-info">
-                            <h3>Master of Computer Application</h3>
-                            <h4>Sardar Patel University</h4>
-                            <span class="education-year">2022 – 2024</span>
-                        </div>
-                    </div>
-                    
-                    <div class="education-card">
-                        <div class="education-icon">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <div class="education-info">
-                            <h3>Bachelor of Science in Computer Science</h3>
-                            <h4>Veer Narmad South Gujarat University</h4>
-                            <span class="education-year">2019 – 2022</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="certificates">
-                    <h3>Professional Certificates</h3>
-                    <div class="certificate-grid">
-                        <div class="certificate-item">
-                            <i class="fas fa-certificate"></i>
-                            <span>Fundamentals of Software Development</span>
-                        </div>
-                        <div class="certificate-item">
-                            <i class="fas fa-certificate"></i>
-                            <span>Git Training</span>
-                        </div>
-                        <div class="certificate-item">
-                            <i class="fas fa-certificate"></i>
-                            <span>Fundamentals of Docker</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="details">
+              <h2>SSC (10th)</h2>
+              <span>Year: 2016- Shree Swaminarayan Vidyalaya Dabhel-396210 Daman and Diu</span>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Kanojiya Deepak</h3>
-                    <p>Flutter Developer passionate about creating amazing mobile experiences</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-stack-overflow"></i></a>
-                        <a href="mailto:kanojiyadeepakkumar517@gmail.com"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="footer-contact">
-                    <h4>Get In Touch</h4>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:kanojiyadeepakkumar517@gmail.com">kanojiyadeepakkumar517@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:9106566275">+91 9106566275</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Kanojiya Deepak. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Lightbox Modal -->
-    <div class="lightbox-overlay" id="lightbox-overlay" onclick="closeLightbox()">
-        <div class="lightbox-container">
-            <button class="lightbox-close" onclick="closeLightbox()">
-                <i class="fas fa-times"></i>
-            </button>
-            <button class="lightbox-prev" onclick="prevImage()">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="lightbox-next" onclick="nextImage()">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            <div class="lightbox-content">
-                <img id="lightbox-image" src="/placeholder.svg" alt="">
-                <div class="lightbox-caption" id="lightbox-caption"></div>
-            </div>
-            <div class="lightbox-thumbnails" id="lightbox-thumbnails"></div>
         </div>
     </div>
-
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-</body>
-</html>
-
+    <div class="section about-me" id="Aboutme">
+        <img src="./assets/images/man.png" alt="Your Name" class="profile-pic">
+        <h1>About Me</h1>
+        <p>My name is Kanojiya Deepak. I have completed a 5-month internship as a Flutter developer from Tech Elecon Pvt Ltd. My role included writing clean code in Dart and performing CRUD operations. Apart from that, I have also worked with another company for 3 months as an intern where I created a demo application for clients using Flutter and Firebase and also created APIs for the application. My strengths include good communication, effective persuasion, and my ability to focus on the details.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/Kanojiya.deepak_/"><img src="./assets/images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/kanojiyadeepak/"><img src="./assets/images/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.github.com/deepakkano"><img src="./assets/images/github.png" alt="GitHub"></a>
+            <a href="#"><img src="./assets/images/facebook.png" alt="Facebook"></a>
+        </div>
+        <a href="mailto:kanojiyadeepakkumar517@gmail.com" class="contact-btn">Email</a>
+        <a href="tel:9106566275" class="portfolio-btn">Phone</a>
     </div>
+</div>
+  
+<div class="container">
+  <div class="certificate-slider">
+      <center><h1 class="heading">Certificate</h1></center>
+      <div class="slider-container">
+          <div class="slide">
+              <img src="/assets/images/cer1.png" alt="Certificate 1">
+              <div class="slide-info">Web Development Certification</div>
+          </div>
+          <div class="slide">
+              <img src="/assets/images/ddyoga1.jpg" alt="Certificate 2">
+              <div class="slide-info">JavaScript Advanced Course</div>
+          </div>
+          <div class="slide">
+              <img src="/assets/images/ddyoga2.jpg" alt="Certificate 3">
+              <div class="slide-info">UI/UX Design Fundamentals</div>
+          </div>
+          <div class="slide">
+              <img src="/assets/images/cer2.png" alt="Certificate 4">
+              <div class="slide-info">Web Development Certification</div>
+          </div>
+          <div class="slide">
+              <img src="/assets/images/IMG_20240101_204855388 (1).jpg" alt="Certificate 5">
+              <div class="slide-info">JavaScript Advanced Course</div>
+          </div>
+          <div class="slide">
+              <img src="/assets/images/cer3.png" alt="Certificate 6">
+              <div class="slide-info">Web Development Certification</div>
+          </div>
+          <div class="slide">
+              <img src="/assets/images/tech.jpg" alt="Certificate 7">
+              <div class="slide-info">JavaScript Advanced Course</div>
+          </div>
+      </div>
+  </div>
+</div>
+<script>
+  
+</script>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Deepak<span>.dev</span></h2>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="theme-toggle" id="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </nav>
+<footer>
+  <div class="footer-content">
+    <p>Developed by Kanojiya Deepak</p>
+    <p>For a better user experience, use Chrome or Firefox</p>
+    <p>&copy; 2024 Kanojiya. All rights reserved.</p>
+  </div>
+</footer>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg">
-            <div class="hero-shape shape-1"></div>
-            <div class="hero-shape shape-2"></div>
-            <div class="hero-shape shape-3"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <p class="hero-greeting">👋 Hello, I'm</p>
-                    <h1 class="hero-name">Kanojiya Deepak</h1>
-                    <h2 class="hero-title">Flutter Developer</h2>
-                    <p class="hero-description">
-                        Passionate Flutter Developer with expertise in building scalable, high-performance mobile applications. 
-                        Specialized in API integration, Firebase, and clean architecture with 2+ years of experience.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <span>View My Work</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="mailto:kanojiyadeepakkumar517@gmail.com" class="btn btn-secondary">
-                            <span>Get In Touch</span>
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <h3>2+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat">
-                            <h3>10+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat">
-                            <h3>5+</h3>
-                            <p>Apps Published</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="profile-card">
-                        <div class="profile-img">
-                            <div class="avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                        </div>
-                        <div class="floating-elements">
-                            <div class="floating-icon flutter">
-                                <i class="fab fa-flutter"></i>
-                            </div>
-                            <div class="floating-icon android">
-                                <i class="fab fa-android"></i>
-                            </div>
-                            <div class="floating-icon code">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="floating-icon mobile">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Social Links -->
-        <div class="social-sidebar">
-            <a href="#" class="social-link" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="#" class="social-link" title="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#" class="social-link" title="Stack Overflow">
-                <i class="fab fa-stack-overflow"></i>
-            </a>
-            <a href="mailto:kanojiyadeepakkumar517@gmail.com" class="social-link" title="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <div class="social-line"></div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Get to know me better</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Profile Summary</h3>
-                    <p>
-                        Passionate Flutter Developer at Kickhead Software Pvt. Ltd. with experience in building scalable, 
-                        high-performance apps using Flutter, Kotlin, and Swift. Skilled in API integration, Firebase, and 
-                        clean architecture, with a strong track record across domains like meditation, grocery delivery, 
-                        and education apps.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="highlight">
-                            <i class="fas fa-mobile-alt"></i>
-                            <div>
-                                <h4>Mobile Development</h4>
-                                <p>Expert in Flutter, Android & iOS development</p>
-                            </div>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-cloud"></i>
-                            <div>
-                                <h4>Backend Integration</h4>
-                                <p>Firebase, REST APIs, and cloud services</p>
-                            </div>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-cogs"></i>
-                            <div>
-                                <h4>State Management</h4>
-                                <p>GetX, BLoC, and Provider patterns</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="about-img-wrapper">
-                        <div class="about-img">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <div class="tech-orbit">
-                            <div class="orbit-item orbit-1">
-                                <i class="fab fa-flutter"></i>
-                            </div>
-                            <div class="orbit-item orbit-2">
-                                <i class="fab fa-android"></i>
-                            </div>
-                            <div class="orbit-item orbit-3">
-                                <i class="fas fa-fire"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Work Experience</h2>
-                <p class="section-subtitle">My professional journey</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Associate Android Developer</h3>
-                            <span class="timeline-date">Aug 2024 – Present</span>
-                        </div>
-                        <h4>KickHead Softwares Pvt. Ltd.</h4>
-                        <ul>
-                            <li>Developed and integrated a Courses module in a meditation app using Flutter (GetX, SharedPreferences, AudioPlayer)</li>
-                            <li>Worked on a Grocery Delivery App, performing UI fixes, screen development, FCM setup</li>
-                            <li>Built responsive UI adaptable to multiple screen sizes</li>
-                            <li>Implemented PDF watermarking using Kotlin and Swift with Flutter MethodChannels</li>
-                            <li>Successfully published multiple apps on Google Play Store and App Store</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Flutter Developer</h3>
-                            <span class="timeline-date">Mar – Apr 2024</span>
-                        </div>
-                        <h4>Madrocket Technologies & Media</h4>
-                        <ul>
-                            <li>Led development of mobile applications using Flutter and Firebase</li>
-                            <li>Developed RESTful APIs with FastAPI</li>
-                            <li>Collaborated on UI/UX design using Figma</li>
-                            <li>Deployed APIs using FastAPI on Koyeb platform</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Flutter Developer Intern</h3>
-                            <span class="timeline-date">Dec 2023 – Apr 2024</span>
-                        </div>
-                        <h4>Tech Elecon Pvt Ltd</h4>
-                        <ul>
-                            <li>Collaborated with senior developers on mobile app development best practices</li>
-                            <li>Created applications using Flutter, Sqflite, and GetX state management</li>
-                            <li>Implemented role-based authentication and access control</li>
-                            <li>Integrated external APIs like EmailJS for enhanced functionality</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-subtitle">Technologies I work with</p>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h3>Mobile Development</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-flutter"></i>
-                            <span>Flutter</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-android"></i>
-                            <span>Android</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>Dart</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-java"></i>
-                            <span>Kotlin</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-swift"></i>
-                            <span>Swift</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-cogs"></i>
-                        <h3>State Management</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-cube"></i>
-                            <span>GetX</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-layer-group"></i>
-                            <span>BLoC</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-stream"></i>
-                            <span>Provider</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-tools"></i>
-                        <h3>Tools & Frameworks</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-fire"></i>
-                            <span>Firebase</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code-branch"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>SQLite</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-rocket"></i>
-                            <span>FastAPI</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Some of my recent work</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>VVN Eats Application</h3>
-                            <span class="project-type">Mobile App</span>
-                        </div>
-                        <button class="project-toggle" onclick="toggleProject('project1')">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                    <p class="project-brief">
-                        Mobile application to streamline menu access, allowing students to view daily menus from all dining halls in one place.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Dart</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">BLoC</span>
-                    </div>
-                    
-                    <div class="project-details" id="project1">
-                        <div class="project-info">
-                            <div class="info-section">
-                                <h4><i class="fas fa-calendar"></i> Duration</h4>
-                                <p>November 2023</p>
-                            </div>
-                            <div class="info-section">
-                                <h4><i class="fas fa-bullseye"></i> Key Features</h4>
-                                <ul>
-                                    <li>Real-time menu updates from multiple dining halls</li>
-                                    <li>User-friendly interface with BLoC state management</li>
-                                    <li>Firebase backend integration</li>
-                                    <li>Eliminated the need to visit each dining hall individually</li>
-                                    <li>Enhanced daily convenience for students</li>
-                                </ul>
-                            </div>
-                            <div class="info-section">
-                                <h4><i class="fas fa-images"></i> Screenshots</h4>
-                                <div class="screenshots">
-                                    <div class="screenshot">
-                                        <img src="/placeholder.svg?height=400&width=250" alt="VVN Eats Home Screen">
-                                        <span>Home Screen</span>
-                                    </div>
-                                    <div class="screenshot">
-                                        <img src="/placeholder.svg?height=400&width=250" alt="VVN Eats Menu Screen">
-                                        <span>Menu Screen</span>
-                                    </div>
-                                    <div class="screenshot">
-                                        <img src="/placeholder.svg?height=400&width=250" alt="VVN Eats Details Screen">
-                                        <span>Details Screen</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    <span>View Code</span>
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Live Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <h3>Finished Part Transfer (FPT)</h3>
-                            <span class="project-type">Enterprise App</span>
-                        </div>
-                        <button class="project-toggle" onclick="toggleProject('project2')">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                    <p class="project-brief">
-                        Modernizing finished part movement in manufacturing using Flutter and SQLite for real-time tracking and coordination.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">SQLite</span>
-                        <span class="tech-tag">Barcode Scanner</span>
-                        <span class="tech-tag">GetX</span>
-                    </div>
-                    
-                    <div class="project-details" id="project2">
-                        <div class="project-info">
-                            <div class="info-section">
-                                <h4><i class="fas fa-calendar"></i> Duration</h4>
-                                <p>December 2023 - April 2024</p>
-                            </div>
-                            <div class="info-section">
-                                <h4><i class="fas fa-bullseye"></i> Key Features</h4>
-                                <ul>
-                                    <li>Role-based access control and authentication</li>
-                                    <li>Advanced barcode scanning functionality</li>
-                                    <li>Real-time tracking and coordination</li>
-                                    <li>Offline data storage with SQLite</li>
-                                    <li>Replaced traditional paper-based methods</li>
-                                </ul>
-                            </div>
-                            <div class="info-section">
-                                <h4><i class="fas fa-images"></i> Screenshots</h4>
-                                <div class="screenshots">
-                                    <div class="screenshot">
-                                        <img src="/placeholder.svg?height=400&width=250" alt="FPT Login Screen">
-                                        <span>Login Screen</span>
-                                    </div>
-                                    <div class="screenshot">
-                                        <img src="/placeholder.svg?height=400&width=250" alt="FPT Scanner Screen">
-                                        <span>Barcode Scanner</span>
-                                    </div>
-                                    <div class="screenshot">
-                                        <img src="/placeholder.svg?height=400&width=250" alt="FPT Dashboard">
-                                        <span>Dashboard</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fab fa-github"></i>
-                                    <span>View Code</span>
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Live Demo</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Education & Certificates</h2>
-                <p class="section-subtitle">My academic background</p>
-            </div>
-            <div class="education-content">
-                <div class="education-grid">
-                    <div class="education-card">
-                        <div class="education-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="education-info">
-                            <h3>Master of Computer Application</h3>
-                            <h4>Sardar Patel University</h4>
-                            <span class="education-year">2022 – 2024</span>
-                        </div>
-                    </div>
-                    
-                    <div class="education-card">
-                        <div class="education-icon">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <div class="education-info">
-                            <h3>Bachelor of Science in Computer Science</h3>
-                            <h4>Veer Narmad South Gujarat University</h4>
-                            <span class="education-year">2019 – 2022</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="certificates">
-                    <h3>Professional Certificates</h3>
-                    <div class="certificate-grid">
-                        <div class="certificate-item">
-                            <i class="fas fa-certificate"></i>
-                            <span>Fundamentals of Software Development</span>
-                        </div>
-                        <div class="certificate-item">
-                            <i class="fas fa-certificate"></i>
-                            <span>Git Training</span>
-                        </div>
-                        <div class="certificate-item">
-                            <i class="fas fa-certificate"></i>
-                            <span>Fundamentals of Docker</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Kanojiya Deepak</h3>
-                    <p>Flutter Developer passionate about creating amazing mobile experiences</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-stack-overflow"></i></a>
-                        <a href="mailto:kanojiyadeepakkumar517@gmail.com"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="footer-contact">
-                    <h4>Get In Touch</h4>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:kanojiyadeepakkumar517@gmail.com">kanojiyadeepakkumar517@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:9106566275">+91 9106566275</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Kanojiya Deepak. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
