@@ -117,7 +117,7 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
   }
 
   function draw() {
-    ctx.fillStyle = 'rgba(2, 6, 4, 0.06)';
+    ctx.fillStyle = 'rgba(3, 7, 18, 0.06)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.font = `${cellSize - 4}px JetBrains Mono, monospace`;
 
@@ -125,8 +125,8 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
       const char = chars[Math.floor(Math.random() * chars.length)];
       const x = i * cellSize;
       const y = drops[i] * cellSize;
-      const alpha = Math.random() * 0.35 + 0.08;
-      ctx.fillStyle = `rgba(0, 255, 136, ${alpha})`;
+      const alpha = Math.random() * 0.3 + 0.06;
+      ctx.fillStyle = `rgba(52, 211, 153, ${alpha})`;
       ctx.fillText(char, x, y);
 
       if (y > canvas.height && Math.random() > 0.985) drops[i] = 0;
@@ -445,7 +445,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const cx = 100, cy = 100, r = 90;
     ctx.clearRect(0, 0, 200, 200);
 
-    ctx.strokeStyle = 'rgba(0, 255, 136, 0.15)';
+    ctx.strokeStyle = 'rgba(52, 211, 153, 0.12)';
     ctx.lineWidth = 1;
     for (let i = 1; i <= 3; i++) {
       ctx.beginPath();
@@ -460,9 +460,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     ctx.stroke();
 
     const grad = ctx.createConicGradient(angle, cx, cy);
-    grad.addColorStop(0, 'rgba(0, 255, 136, 0.35)');
-    grad.addColorStop(0.15, 'rgba(0, 255, 136, 0)');
-    grad.addColorStop(1, 'rgba(0, 255, 136, 0)');
+    grad.addColorStop(0, 'rgba(52, 211, 153, 0.3)');
+    grad.addColorStop(0.15, 'rgba(52, 211, 153, 0)');
+    grad.addColorStop(1, 'rgba(52, 211, 153, 0)');
     ctx.fillStyle = grad;
     ctx.beginPath();
     ctx.moveTo(cx, cy);
