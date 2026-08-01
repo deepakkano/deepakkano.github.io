@@ -3,471 +3,564 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kanojiya Deepak</title>
+  <meta name="description" content="Kanojiya Deepak — Mobile Developer & aspiring Mobile Pen Tester. Flutter, Android, iOS security, OWASP Mobile.">
+  <meta name="theme-color" content="#030806">
+  <title>Kanojiya Deepak | Mobile Dev × Security</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="glow-orb orb-1" aria-hidden="true"></div>
+  <div class="glow-orb orb-2" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+  <canvas id="cyber-radar" aria-hidden="true"></canvas>
+  <div id="floatingCode" class="floating-code-layer" aria-hidden="true"></div>
+  <div class="cyber-particles" id="cyberParticles" aria-hidden="true"></div>
 
-<body><canvas id="constellation"></canvas>
-
-  <script>
-   
-  </script>
-  
-  <div class="loader-container">
-    <div class="loader"></div>
-   
+  <div class="loader-container" id="loader">
+    <div class="loader-box">
+      <div class="loader-logo">[KD]</div>
+      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+      <div class="loader-lines">
+        <span class="loader-line" data-delay="0">boot: kernel loaded</span>
+        <span class="loader-line" data-delay="1">init: mobile_dev module ✓</span>
+        <span class="loader-line" data-delay="2">init: security_lab module ✓</span>
+        <span class="loader-line" data-delay="3">system ready — welcome</span>
+      </div>
+    </div>
   </div>
-  <nav>
-    <div class="logo">
-      <a href="#">Kanojiya Deepak</a>
-    </div>
-    <div class="menu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#Skills">Skills</a></li>
-        <li><a href="#Aboutme">AboutMe</a></li>
-      </ul>
-    </div>
-    <div class="toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+
+  <nav class="navbar">
+    <a href="#home" class="nav-logo"><span class="bracket">[</span>KD<span class="bracket">]</span></a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#dual">Expertise</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#labs">Labs</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <div class="hero-left reveal">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          Mobile Dev → Cybersecurity
+        </div>
+        <h1 class="hero-title">
+          I build apps.<br>
+          I <span class="cyber-text glitch" data-text="break">break</span> them.<br>
+          I secure them.
+        </h1>
+        <div class="hero-subtitle">
+          <span class="typed-prefix">&gt; </span>
+          <span class="typed-text" id="typedText">Mobile Pen Tester</span>
+          <span class="typed-cursor">|</span>
+        </div>
+        <p class="hero-desc">
+        Hi, I'm <strong>Kanojiya Deepak</strong> — a Flutter &amp; Android developer with 2+ years experience.
+        I'm at the beginning of my mobile security journey — with a long-term goal of becoming a Mobile Pen Tester.
+        </p>
+
+        <div class="hero-dual">
+          <div class="dual-pill dev"><i class="fas fa-code"></i> Build</div>
+          <div class="dual-flow"><i class="fas fa-chevron-right"></i></div>
+          <div class="dual-pill break"><i class="fas fa-bug"></i> Break</div>
+          <div class="dual-flow"><i class="fas fa-chevron-right"></i></div>
+          <div class="dual-pill secure"><i class="fas fa-shield-halved"></i> Secure</div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="https://www.github.com/deepakkano" class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <button class="btn btn-outline" id="downloadBtn">
+            <i class="fas fa-file-pdf"></i> Resume
+          </button>
+          <a href="https://www.linkedin.com/in/kanojiyadeepak/" class="btn btn-ghost" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right reveal delay-1">
+        <div class="command-center">
+          <div class="profile-wrap">
+            <div class="cyber-radar-ring" aria-hidden="true">
+              <div class="radar-sweep"></div>
+              <div class="radar-blip blip-1"></div>
+              <div class="radar-blip blip-2"></div>
+              <div class="radar-blip blip-3"></div>
+            </div>
+            <div class="profile-ring">
+              <img src="./assets/images/pic.PNG" alt="Kanojiya Deepak" class="profile-img" width="260" height="260">
+              <div class="ring-scan"></div>
+              <div class="ring-pulse"></div>
+              <div class="scan-line"></div>
+            </div>
+            <div class="status-chip online"><span></span> Available</div>
+            <div class="cyber-orbit" aria-hidden="true">
+              <span class="orbit-icon o1"><i class="fas fa-shield-halved"></i></span>
+              <span class="orbit-icon o2"><i class="fas fa-code"></i></span>
+              <span class="orbit-icon o3"><i class="fas fa-bug"></i></span>
+              <span class="orbit-icon o4"><i class="fas fa-mobile-screen"></i></span>
+            </div>
+          </div>
+          <div class="code-editor-anim">
+            <div class="editor-header">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <div class="editor-tabs">
+                <button class="editor-tab active" data-file="dart">main.dart</button>
+                <button class="editor-tab" data-file="security">scan.sh</button>
+              </div>
+            </div>
+            <pre class="editor-body"><code id="liveCode"></code><span class="code-cursor">|</span></pre>
+            <div class="editor-status">
+              <span class="status-dot"></span> Live coding...
+            </div>
+          </div>
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title">deepak@security-lab</span>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+              <div class="term-line"><span class="prompt">$</span> whoami</div>
+              <div class="term-line output">kanojiya_deepak</div>
+              <div class="term-line"><span class="prompt">$</span> cat role.txt</div>
+              <div class="term-line output">mobile_dev + security_researcher</div>
+              <div class="term-line"><span class="prompt">$</span> status --career</div>
+              <div class="term-line output warn">→ LEARNING: Mobile Security (just started)</div>
+              <div class="term-line"><span class="prompt">$</span> <span class="term-cursor">█</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats reveal delay-2">
+      <div class="stat-card">
+        <span class="stat-num" data-target="8">0</span><span class="stat-suffix">+</span>
+        <span class="stat-label">Apps Published</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" data-target="2">0</span><span class="stat-suffix">+</span>
+        <span class="stat-label">Years Mobile Dev</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" data-target="80">0</span><span class="stat-suffix">+</span>
+        <span class="stat-label">Screens Migrated</span>
+      </div>
+      <div class="stat-card highlight-stat">
+        <span class="stat-num text-stat">New</span>
+        <span class="stat-label">Security Journey</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Animation Showcase -->
+  <section class="anim-showcase" aria-hidden="true">
+    <div class="anim-showcase-inner">
+      <div class="anim-panel coding-panel">
+        <div class="panel-label"><i class="fas fa-code"></i> App Building</div>
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-bar"><span></span><span></span><span></span></div>
+            <div class="phone-code" id="phoneCode"></div>
+            <div class="phone-progress"><div class="phone-progress-fill"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="anim-panel cyber-panel">
+        <div class="panel-label"><i class="fas fa-shield-virus"></i> Security Scan</div>
+        <div class="scan-display">
+          <div class="scan-target">
+            <i class="fas fa-file-code"></i>
+            <span>app-release.apk</span>
+          </div>
+          <div class="scan-bar-wrap">
+            <div class="scan-bar-fill" id="scanBarFill"></div>
+          </div>
+          <div class="scan-log" id="scanLog"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee">
+      <span>Flutter</span><span>•</span><span>Kotlin</span><span>•</span><span>Swift</span><span>•</span>
+      <span>Frida</span><span>•</span><span>Burp Suite</span><span>•</span><span>MobSF</span><span>•</span>
+      <span>OWASP MSTG</span><span>•</span><span>jadx</span><span>•</span><span>ADB</span><span>•</span>
+      <span>Firebase</span><span>•</span><span>FastAPI</span><span>•</span><span>Docker</span><span>•</span>
+      <span>Flutter</span><span>•</span><span>Kotlin</span><span>•</span><span>Swift</span><span>•</span>
+      <span>Frida</span><span>•</span><span>Burp Suite</span><span>•</span><span>MobSF</span><span>•</span>
+    </div>
+  </div>
+
+  <!-- Dual Expertise -->
+  <section id="dual" class="section">
+    <div class="section-header reveal">
+      <span class="section-tag">// dual_expertise</span>
+      <h2 class="section-title">Why Dev + Security?</h2>
+      <p class="section-desc">Most pen testers learn apps from the outside. I built them from the inside.</p>
+    </div>
+
+    <div class="value-grid">
+      <article class="value-card reveal">
+        <div class="value-icon"><i class="fas fa-microscope"></i></div>
+        <h3>Insider Perspective</h3>
+        <p>I know where devs hide secrets, skip validation, and hardcode keys — because I've been that dev.</p>
+      </article>
+      <article class="value-card reveal delay-1">
+        <div class="value-icon"><i class="fas fa-layer-group"></i></div>
+        <h3>Full Stack Mobile</h3>
+        <p>Flutter, native Kotlin/Swift, MethodChannels, DRM, JWT — I understand the entire attack surface.</p>
+      </article>
+      <article class="value-card reveal delay-2">
+        <div class="value-icon"><i class="fas fa-crosshairs"></i></div>
+        <h3>Learning Security</h3>
+        <p>Just getting started — exploring how the apps I build can be tested, broken, and secured properly.</p>
+      </article>
+    </div>
+
+    <div class="dual-grid reveal">
+      <div class="dual-card dev-card">
+        <div class="dual-card-head">
+          <div class="dual-card-icon"><i class="fas fa-laptop-code"></i></div>
+          <div>
+            <h3>Mobile Development</h3>
+            <span class="dual-level">Expert · 2+ yrs</span>
+          </div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Flutter / Dart</span><span>95%</span></div>
+          <div class="skill-bar"><div class="skill-fill dev-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Kotlin / Android</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-fill dev-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Swift / iOS</span><span>70%</span></div>
+          <div class="skill-bar"><div class="skill-fill dev-fill" data-width="70"></div></div>
+        </div>
+        <ul class="dual-list">
+          <li>8+ apps on Play Store &amp; App Store</li>
+          <li>Clean Architecture · GetX · BLoC</li>
+          <li>Firebase · REST · FastAPI</li>
+        </ul>
+      </div>
+
+      <div class="dual-card sec-card">
+        <div class="dual-card-head">
+          <div class="dual-card-icon"><i class="fas fa-seedling"></i></div>
+          <div>
+            <h3>Mobile Security</h3>
+            <span class="dual-level">Just Started · Learning</span>
+          </div>
+        </div>
+        <p class="sec-learning-note">
+          Just getting started — learning the fundamentals. No expertise claims, just an honest learning journey.
+        </p>
+        <ul class="dual-list">
+          <li>Studying OWASP Mobile basics</li>
+          <li>Exploring static analysis</li>
+          <li>Trying tools: jadx, ADB, Burp Suite</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="section-header reveal">
+      <span class="section-tag">// work_log</span>
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-desc">Every production app taught me a new way apps can fail.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="timeline-item reveal">
+        <div class="timeline-marker current"></div>
+        <div class="timeline-card featured">
+          <div class="card-header">
+            <div class="card-title-block">
+              <span class="card-num">01</span>
+              <div>
+                <h3>Associate Android Developer</h3>
+                <p class="company">KickHead Softwares Pvt. Ltd.</p>
+              </div>
+            </div>
+            <span class="badge badge-current"><i class="fas fa-circle"></i> Current</span>
+          </div>
+          <p class="meta"><i class="far fa-calendar"></i> Aug 2024 – Present &nbsp;·&nbsp; <i class="fas fa-map-marker-alt"></i> India</p>
+
+          <div class="security-note">
+            <i class="fas fa-shield-halved"></i>
+            <div>
+              <strong>Security angle:</strong> DRM video players, PDF watermarking, JWT/OTP auth, store compliance —
+              direct experience with mechanisms pen testers target.
+            </div>
+          </div>
+
+          <div class="highlights-grid">
+            <div class="highlight-card">
+              <div class="hl-icon"><i class="fas fa-shield-alt"></i></div>
+              <h4>VidSafe Player</h4>
+              <p>Secure EdTech player — Kotlin/Swift MethodChannels, PDF watermarking, Firebase Auth, BLoC, Zoom SDK.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="hl-icon"><i class="fas fa-store"></i></div>
+              <h4>Store Compliance</h4>
+              <p>8+ apps published. Resolved Play/App Store rejections — permissions, privacy, metadata.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="hl-icon"><i class="fas fa-graduation-cap"></i></div>
+              <h4>Vajiram & Ravi IAS</h4>
+              <p>80+ screen native→Flutter migration. Razorpay, VdoCipher DRM, FCM deep links, bilingual UI.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="hl-icon"><i class="fas fa-mobile"></i></div>
+              <h4>Relax Infinity · Pados</h4>
+              <p>Wellness courses module &amp; grocery delivery — FCM, API integrations, UI development.</p>
+            </div>
+          </div>
+          <div class="tech-tags">
+            <span>Flutter</span><span>Kotlin</span><span>Swift</span><span>DRM</span>
+            <span>JWT</span><span>Firebase</span><span>GoRouter</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <span class="card-num">02</span>
+              <div>
+                <h3>Mobile Application Developer</h3>
+                <p class="company">Madrocket Technologies & Media</p>
+              </div>
+            </div>
+          </div>
+          <p class="meta"><i class="far fa-calendar"></i> Mar – May 2024 · 3 mos · Remote</p>
+          <ul class="card-list">
+            <li>Flutter + Firebase apps with FastAPI backend integration.</li>
+            <li>RESTful API design &amp; Koyeb deployment.</li>
+            <li>Figma → Flutter UI implementation.</li>
+          </ul>
+          <div class="tech-tags"><span>Flutter</span><span>Firebase</span><span>FastAPI</span><span>Python</span></div>
+        </div>
+      </article>
+
+      <article class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card">
+          <div class="card-header">
+            <div class="card-title-block">
+              <span class="card-num">03</span>
+              <div>
+                <h3>Flutter Developer · Internship</h3>
+                <p class="company">Tech Elecon Pvt. Ltd.</p>
+              </div>
+            </div>
+          </div>
+          <p class="meta"><i class="far fa-calendar"></i> Dec 2023 – Apr 2024 · 5 mos · Hybrid</p>
+          <ul class="card-list">
+            <li>Flutter apps with Sqflite &amp; GetX state management.</li>
+            <li>CRUD operations, clean Dart code, team collaboration.</li>
+          </ul>
+          <div class="tech-tags"><span>Flutter</span><span>GetX</span><span>Sqflite</span><span>Dart</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Security -->
+  <section id="security" class="section security-section">
+    <div class="section-header reveal">
+      <span class="section-tag">// learning_security</span>
+      <h2 class="section-title">Security — Learning Phase</h2>
+      <p class="section-desc">Currently learning the basics. Here's what I'm focused on right now.</p>
+    </div>
+
+    <div class="learning-focus reveal">
+      <div class="focus-card">
+        <i class="fas fa-book-open"></i>
+        <h4>Studying</h4>
+        <p>OWASP Mobile Top 10 · App security fundamentals</p>
+      </div>
+      <div class="focus-card">
+        <i class="fas fa-wrench"></i>
+        <h4>Exploring</h4>
+        <p>jadx · ADB · Burp Suite basics</p>
+      </div>
+      <div class="focus-card">
+        <i class="fas fa-bullseye"></i>
+        <h4>Goal</h4>
+        <p>Becoming a Mobile Pen Tester — one step at a time</p>
+      </div>
+    </div>
+
+    <div class="learning-path reveal">
+      <h3><i class="fas fa-route"></i> Career Roadmap</h3>
+      <div class="roadmap">
+        <div class="roadmap-step done">
+          <div class="roadmap-dot"><i class="fas fa-check"></i></div>
+          <div class="roadmap-content">
+            <span class="roadmap-num">Phase 01</span>
+            <h4>Mobile Dev Mastery</h4>
+            <p>Flutter, native modules, 8+ published apps</p>
+          </div>
+        </div>
+        <div class="roadmap-step active">
+          <div class="roadmap-dot"><i class="fas fa-spinner fa-spin"></i></div>
+          <div class="roadmap-content">
+            <span class="roadmap-num">Phase 02</span>
+            <h4>Security Basics — Current Focus</h4>
+            <p>OWASP fundamentals, exploring tools, building core knowledge</p>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot"><i class="fas fa-lock"></i></div>
+          <div class="roadmap-content">
+            <span class="roadmap-num">Phase 03</span>
+            <h4>Security Certifications</h4>
+            <p>eJPT, Mobile security certs</p>
+          </div>
+        </div>
+        <div class="roadmap-step">
+          <div class="roadmap-dot"><i class="fas fa-lock"></i></div>
+          <div class="roadmap-content">
+            <span class="roadmap-num">Phase 04</span>
+            <h4>Bug Bounty &amp; Red Team</h4>
+            <p>Real-world mobile pentesting engagements</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Labs -->
+  <section id="labs" class="section">
+    <div class="section-header reveal">
+      <span class="section-tag">// coming_soon</span>
+      <h2 class="section-title">Labs &amp; Practice</h2>
+      <p class="section-desc">As I learn, lab writeups and practice notes will be added here.</p>
+    </div>
+
+    <div class="labs-placeholder reveal">
+      <div class="placeholder-icon"><i class="fas fa-flask"></i></div>
+      <h3>Coming soon</h3>
+      <p>I'll start practicing on vulnerable apps — updates will appear here.</p>
+    </div>
+  </section>
+
+  <!-- About + Contact -->
+  <section id="about" class="section">
+    <div class="section-header reveal">
+      <span class="section-tag">// about_me</span>
+      <h2 class="section-title">The Story</h2>
+    </div>
+
+    <div class="about-grid reveal">
+      <div class="about-main">
+        <div class="about-top">
+          <img src="./assets/images/pic.PNG" alt="Kanojiya Deepak" class="about-avatar" width="100" height="100">
+          <div>
+            <h3>Kanojiya Deepak</h3>
+            <p class="role">Mobile Developer · Learning Security</p>
+            <div class="about-location"><i class="fas fa-map-marker-alt"></i> Anand, Gujarat, India</div>
+          </div>
+        </div>
+        <p class="bio">
+          I started as a Flutter developer shipping production apps to Play Store and App Store.
+          While building DRM players, JWT authentication, and PDF watermarking at KickHead Softwares,
+          I became fascinated with the <strong>offensive side</strong> — how each protection I built could be bypassed.
+          <br><br>
+          I've recently started learning mobile security — fundamentals first, then tools, then hands-on practice.
+          My development background will help, but I'm honestly still in the early learning phase.
+        </p>
+        <div class="social-row">
+          <a href="https://www.github.com/deepakkano" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/kanojiyadeepak/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/Kanojiya.deepak_/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:kanojiyadeepakkumar517@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="about-side">
+        <div class="info-card">
+          <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+          <div class="info-row">
+            <span class="info-year">2022–24</span>
+            <div><strong>MCA</strong><br>Sardar Patel University, Anand</div>
+          </div>
+          <div class="info-row">
+            <span class="info-year">2019–22</span>
+            <div><strong>BSc Computer Science</strong><br>VNSGU · KBS College, Vapi</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <h4><i class="fas fa-certificate"></i> Certifications</h4>
+          <div class="cert-row done"><i class="fas fa-check"></i> Fundamentals of Software Development</div>
+          <div class="cert-row done"><i class="fas fa-check"></i> Git Training</div>
+          <div class="cert-row done"><i class="fas fa-check"></i> Fundamentals of Docker</div>
+          <div class="cert-row pending"><i class="fas fa-hourglass-half"></i> Mobile Security — In Progress</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section id="contact" class="contact-cta reveal">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <span class="section-tag">// contact</span>
+        <h2>Let's connect.</h2>
+        <p>Open to mobile dev roles, security learning opportunities, and mentorship.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="mailto:kanojiyadeepakkumar517@gmail.com" class="btn btn-primary btn-lg">
+          <i class="fas fa-envelope"></i> kanojiyadeepakkumar517@gmail.com
+        </a>
+        <a href="tel:9106566275" class="btn btn-outline btn-lg">
+          <i class="fas fa-phone"></i> +91 9106566275
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#home" class="footer-logo">[KD]</a>
+      <p class="footer-tagline">Build · Break · Secure</p>
+      <div class="footer-links">
+        <a href="https://www.github.com/deepakkano" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/kanojiyadeepak/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:kanojiyadeepakkumar517@gmail.com">Email</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Kanojiya Deepak · Mobile Dev &amp; Security</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
   <script src="script.js"></script>
-  <div class="div-container">
-    <div class="image-container">
-      <img src="./assets/images/man.png" alt="Descriptive text">
-      <p>Resourceful and innovative software developer specializing in Flutter and mobile
-        application development with a Master's in Computer Application from Sardar Patel
-        University. Experienced in collaborating with teams to deliver high-quality mobile
-        applications, using modern technologies such as Flutter, Firebase, and FastAPI. Adept
-        at problem-solving and passionate about adopting new technologies to enhance user
-        experiences.</p>
-    </div>
-    <div class="name-container">
-      <span class="text first-text">I'm a</span>
-      <span class="text sec-text">Kanojiya Deepak</span>
-      <div class="button-container">
-       <a href="https://www.github.com/deepakkano"> <button class="btn" >Github</button></a>
-        <button class="btn" id="downloadBtn">Resume</button>
-      </div>
-      <script>
-        document.getElementById('downloadBtn').addEventListener('click', function() {
-            var pdfUrl = 'doc/KanojiyaDeepak_resume.pdf';
-            
-            var link = document.createElement('a');
-            link.href = pdfUrl;
-            
-          
-            link.download = 'Deepak_Update_Resume.pdf';
-            
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-        </script>
-    </div> 
-    <script>
-      const text = document.querySelector(".sec-text");
-  
-      const textLoad = () => {
-        setTimeout(() => {
-          text.textContent = "MCA Graduate";
-        }, 0);
-        setTimeout(() => {
-          text.textContent = "Flutter Developer";
-        }, 4000);
-        setTimeout(() => {
-          text.textContent = "Web Developer";
-        }, 8000);
-        setTimeout(() => {
-          text.textContent = "Mobile Application Developer";
-        }, 12000);
-      };
-  
-      textLoad();
-      setInterval(textLoad, 16000);
-
-
-      // Function to handle scroll event
-function handleScroll() {
-  const nav = document.querySelector('nav');
-  if (window.scrollY > 50) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
-}
-
-// Add scroll event listener
-window.addEventListener('scroll', handleScroll);
-
-// Call handleScroll on page load
-handleScroll();
-    </script>
-  </div>
-  
-  
-  
-  <div id="experience" class="ex-container">
-    <div class="ex-content">
-      <center><h1 class="heading">Experience</h1></center>
-      <img src="assets/images/ex.png" alt="Sample Image">
-    </div>
-    <div class="ex-red-div">
-      <div class="ex-details">
-        <b>Flutter developer </b>
-        <p>Tech Elecon Pvt. Ltd. · Internship</p>
-        <p>Dec 2023 - Apr 2024 · 5 mos</p>
-        <p>Anand, Gujarat, India · Hybrid</p>
-        <p>Collaborated with senior developers to integrate best practices in mobile application
-          development. Developed applications using <b>Flutter</b>, <b>Sqflite</b>, and <b>state management with GetX</b>
-          • Contributed to team projects by providing innovative solutions and enhancing application
-          functionalities.</p>
-      </div>
-      <div class="ex-details">
-        <b>Mobile Application Developer (Flutter)</b>
-        <p>Madrocket Technologies & Media</p>
-        <p>Mar 2024 - May 2024 · 3 mos</p>
-        <p>Nagpur, Maharashtra, India · Remote</p>
-        <p>Led the development of mobile applications using Flutter and <b>Firebase</b>, focusing on scalable and
-          efficient solutions with seamless API integration using FastAPI.
-          • Designed and implemented <b>RESTful APIs</b> using <b>FastAPI</b>, improving data interaction and
-          backend functionalities.</p>
-      </div>
-    </div>
-  </div>
-  
-  <center><h1 class="heading">Skills</h1></center>
-
-  <div id="Skills" class="green-div">
-    <div class="sk-image-container">
-      <img src="./assets/images/app-development.png" alt="Image 1" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/css-3.png" alt="Image 2" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/github.png" alt="Image 3" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/html-5.png" alt="Image 4" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/java.png" alt="Image 5" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/js.png" alt="Image 6" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/mysql.png" alt="Image 7" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/php.png" alt="Image 8" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/python.png" alt="Image 9" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/wordpress.png" alt="Image 10" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/world-wide-web.png" alt="Image 11" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/pngwing.com.png" alt="Image 11" class="image">
-    </div><div class="sk-image-container">
-      <img src="./assets/images/pngwing.com (1).png" alt="Image 11" class="image">
-    </div><div class="sk-image-container">
-      <img src="./assets/images/bloc.png" alt="Image 11" class="image">
-    </div><div class="sk-image-container">
-      <img src="./assets/images/getx.png" alt="Image 11" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/pngegg.png" alt="Image 11" class="image">
-    </div><div class="sk-image-container">
-      <img src="./assets/images/FastAPI.png" alt="Image 11" class="image">
-    </div><div class="sk-image-container">
-      <img src="./assets/images/integration.png" alt="Image 11" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/pngegg (1).png" alt="Image 11" class="image">
-    </div><div class="sk-image-container">
-      <img src="./assets/images/pngegg (2).png" alt="Image 11" class="image">
-    </div><div class="sk-image-container">
-      <img src="./assets/images/pngegg (3).png" alt="Image 11" class="image">
-    </div>
-    <div class="sk-image-container">
-      <img src="./assets/images/android-studio-icon.png" alt="Image 11" class="image">
-    </div>
-  </div>
-  </div><script>
-document.addEventListener("DOMContentLoaded", function() {
-  const containers = document.querySelectorAll(".sk-image-container");
-  const maxWidth = document.querySelector(".green-div").clientWidth;
-  const maxHeight = 850; // Adjust this to match the height of your container
-
-  const positions = []; // Array to store occupied positions
-
-  containers.forEach(container => {
-    let attempts = 0;
-    let left, top;
-    
-    do {
-      left = Math.floor(Math.random() * (maxWidth - 120)); // Adjust 120 to the width of your container
-      top = Math.floor(Math.random() * (maxHeight - 120)); // Adjust 850 to the height of your container
-      attempts++;
-    } while (positionOccupied(left, top, positions) && attempts < 100); // Limit the number of attempts
-
-    container.style.left = `${left}px`;
-    container.style.top = `${top}px`;
-    positions.push({ left, top });
-  });
-});
-
-function positionOccupied(left, top, positions) {
-  // Check if the position is too close to any existing position
-  return positions.some(position => {
-    const distance = Math.sqrt((position.left - left) ** 2 + (position.top - top) ** 2);
-    return distance < 120; // Adjust this value to set the minimum distance between images
-  });
-}
-
-  </script>
-      <h1 class="heading">Work</h1>
-      <div class="portfolio">
-          <div class="project" id="project1">
-              <img src="https://picsum.photos/id/1/150/150" alt="App UI 1" class="project-image">
-              <div class="project-name">Finished Part Transfer(FPT)</div>
-          </div>
-  
-          <div class="project" id="project2">
-              <img src="https://picsum.photos/id/2/150/150" alt="App UI 2" class="project-image">
-              <div class="project-name">App Name 2</div>
-          </div>
-  
-          <div class="project" id="project3">
-              <img src="https://picsum.photos/id/3/150/150" alt="App UI 3" class="project-image">
-              <div class="project-name">App Name 3</div>
-          </div>
-      </div>
-  
-      <button class="load-more-btn">Load More Projects</button>
-  
-      <div id="popup" class="popup">
-          <div class="popup-content">
-              <span class="close">&times;</span>
-              <div class="slider-work" id="slider-work">
-                  <!-- Images will be inserted here by JavaScript -->
-              </div>
-              <div class="project-info" id="project-info">
-                  <!-- Project info will be inserted here by JavaScript -->
-              </div>
-          </div>
-      </div>
-  
-      <script>
-          document.addEventListener('DOMContentLoaded', function () {
-              const projects = [
-                  {
-                      id: 'project1',
-                      name: 'Finished Part Transfer (FPT)',
-                      description: 'Avabilble Soon',
-                      images: [
-                          'https://picsum.photos/id/10/800/600',
-                          'https://picsum.photos/id/20/800/600',
-                          'https://picsum.photos/id/30/800/600'
-                      ]
-                  },
-                  {
-                      id: 'project2',
-                      name: 'App Name 2',
-                      description: 'Avabilble Soon',
-                      images: [
-                          'https://picsum.photos/id/40/800/600',
-                          'https://picsum.photos/id/50/800/600',
-                          'https://picsum.photos/id/60/800/600'
-                      ]
-                  },
-                  {
-                      id: 'project3',
-                      name: 'App Name 3',
-                      description: 'Avabilble Soon',
-                      images: [
-                          'https://picsum.photos/id/70/800/600',
-                          'https://picsum.photos/id/80/800/600',
-                          'https://picsum.photos/id/90/800/600'
-                      ]
-                  }
-              ];
-  
-              const popup = document.getElementById('popup');
-              const close = document.querySelector('.close');
-              const slider = document.getElementById('slider-work');
-              const projectInfo = document.getElementById('project-info');
-              let slideIndex = 0;
-              let slideInterval;
-  
-              function showSlides() {
-                  const slides = document.querySelectorAll('.slide-work');
-                  slides.forEach((slide, index) => {
-                      slide.style.transform = `translateX(${(index - slideIndex) * 100}%)`;
-                  });
-                  slideIndex = (slideIndex + 1) % slides.length;
-              }
-  
-              function startSlider() {
-                  slideInterval = setInterval(showSlides, 3000);
-              }
-  
-              function stopSlider() {
-                  clearInterval(slideInterval);
-              }
-  
-              projects.forEach(project => {
-                  document.getElementById(project.id).addEventListener('click', function () {
-                      slider.innerHTML = '';
-                      projectInfo.innerHTML = `<h2>${project.name}</h2><p>${project.description}</p>`;
-                      project.images.forEach(image => {
-                          const img = document.createElement('img');
-                          img.src = image;
-                          img.className = 'slide-work';
-                          slider.appendChild(img);
-                      });
-                      slideIndex = 0;
-                      showSlides();
-                      startSlider();
-                      popup.style.display = 'block';
-                  });
-              });
-  
-              close.addEventListener('click', function () {
-                  popup.style.display = 'none';
-                  stopSlider();
-              });
-  
-              window.addEventListener('click', function (event) {
-                  if (event.target === popup) {
-                      popup.style.display = 'none';
-                      stopSlider();
-                  }
-              });
-          });
-      </script>
-  <center><h1 class="heading">About me</h1></center>
-
-  <div class="about-container">
-
-    <div class="section education">
-        <center><h1 class="heading">My Education Qualifications</h1></center>
-
-        <div class="qualification">
-            <div class="icon">
-                <i class="fas fa-school"></i>
-            </div>
-            <div class="details">
-              <h2>Postgraduate Degree</h2>
-
-                <span>Year: 2024 -G H Patel PG Department of Computer Science and Technology ,Anand-388120 Gujarat</span>
-            </div>
-        </div>
-        <div class="qualification">
-            <div class="icon">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="details">
-                <h2>Undergraduate Degree</h2>
-
-                <span>Year: 2022 - KBS Commerce and Nataraj Professional Sciences College, Vapi-396161 Gujarat</span>
-            </div>
-        </div>
-        <div class="qualification">
-            <div class="icon">
-                <i class="fas fa-university"></i>
-            </div>
-            <div class="details">
-              <h2>HSC (12th)</h2>
-              <span>Year: 2018 -Sarvajanik Vidyalaya Daman-396210 Daman and Diu</span>
-            </div>
-        </div>
-        <div class="qualification">
-            <div class="icon">
-                <i class="fas fa-user-graduate"></i>
-            </div>
-            <div class="details">
-              <h2>SSC (10th)</h2>
-              <span>Year: 2016- Shree Swaminarayan Vidyalaya Dabhel-396210 Daman and Diu</span>
-            </div>
-        </div>
-    </div>
-    <div class="section about-me" id="Aboutme">
-        <img src="./assets/images/man.png" alt="Your Name" class="profile-pic">
-        <h1>About Me</h1>
-        <p>My name is Kanojiya Deepak. I have completed a 5-month internship as a Flutter developer from Tech Elecon Pvt Ltd. My role included writing clean code in Dart and performing CRUD operations. Apart from that, I have also worked with another company for 3 months as an intern where I created a demo application for clients using Flutter and Firebase and also created APIs for the application. My strengths include good communication, effective persuasion, and my ability to focus on the details.</p>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/Kanojiya.deepak_/"><img src="./assets/images/instagram.png" alt="Instagram"></a>
-            <a href="https://www.linkedin.com/in/kanojiyadeepak/"><img src="./assets/images/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://www.github.com/deepakkano"><img src="./assets/images/github.png" alt="GitHub"></a>
-            <a href="#"><img src="./assets/images/facebook.png" alt="Facebook"></a>
-        </div>
-        <a href="mailto:kanojiyadeepakkumar517@gmail.com" class="contact-btn">Email</a>
-        <a href="tel:9106566275" class="portfolio-btn">Phone</a>
-    </div>
-</div>
-  
-<div class="container">
-  <div class="certificate-slider">
-      <center><h1 class="heading">Certificate</h1></center>
-      <div class="slider-container">
-          <div class="slide">
-              <img src="/assets/images/cer1.png" alt="Certificate 1">
-              <div class="slide-info">Web Development Certification</div>
-          </div>
-          <div class="slide">
-              <img src="/assets/images/ddyoga1.jpg" alt="Certificate 2">
-              <div class="slide-info">JavaScript Advanced Course</div>
-          </div>
-          <div class="slide">
-              <img src="/assets/images/ddyoga2.jpg" alt="Certificate 3">
-              <div class="slide-info">UI/UX Design Fundamentals</div>
-          </div>
-          <div class="slide">
-              <img src="/assets/images/cer2.png" alt="Certificate 4">
-              <div class="slide-info">Web Development Certification</div>
-          </div>
-          <div class="slide">
-              <img src="/assets/images/IMG_20240101_204855388 (1).jpg" alt="Certificate 5">
-              <div class="slide-info">JavaScript Advanced Course</div>
-          </div>
-          <div class="slide">
-              <img src="/assets/images/cer3.png" alt="Certificate 6">
-              <div class="slide-info">Web Development Certification</div>
-          </div>
-          <div class="slide">
-              <img src="/assets/images/tech.jpg" alt="Certificate 7">
-              <div class="slide-info">JavaScript Advanced Course</div>
-          </div>
-      </div>
-  </div>
-</div>
-<script>
-  
-</script>
-
-<footer>
-  <div class="footer-content">
-    <p>Developed by Kanojiya Deepak</p>
-    <p>For a better user experience, use Chrome or Firefox</p>
-    <p>&copy; 2024 Kanojiya. All rights reserved.</p>
-  </div>
-</footer>
-
 </body>
 </html>
