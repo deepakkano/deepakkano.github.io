@@ -458,7 +458,8 @@ canvas#matrix-canvas {
 
 .profile-img {
   width: 100%; height: 100%; border-radius: 50%;
-  object-fit: cover; border: 4px solid var(--bg);
+  object-fit: cover; object-position: center 18%;
+  border: 4px solid var(--bg);
 }
 
 .status-chip {
@@ -1150,7 +1151,8 @@ canvas#cyber-radar {
 
 .about-avatar {
   width: 80px; height: 80px; border-radius: 50%;
-  object-fit: cover; border: 2px solid var(--green);
+  object-fit: cover; object-position: center 18%;
+  border: 2px solid var(--green);
   box-shadow: 0 0 24px var(--green-glow);
 }
 
