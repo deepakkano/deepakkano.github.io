@@ -4,8 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kanojiya Deepak — Mobile Developer & aspiring Mobile Pen Tester. Flutter, Android, iOS security, OWASP Mobile.">
-  <meta name="theme-color" content="#030712">
+  <meta name="theme-color" content="#030712" id="themeColor">
   <title>Kanojiya Deepak | Mobile Dev × Security</title>
+  <script>
+    (function () {
+      var t = localStorage.getItem('kd-theme');
+      if (t === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#e2e8f0');
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,21 +39,38 @@
   <div id="floatingCode" class="floating-code-layer" aria-hidden="true"></div>
   <div class="cyber-particles" id="cyberParticles" aria-hidden="true"></div>
 
-  <div class="loader-container" id="loader">
-    <div class="loader-box">
-      <div class="loader-logo">[KD]</div>
-      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
-      <div class="loader-lines">
-        <span class="loader-line" data-delay="0">boot: kernel loaded</span>
-        <span class="loader-line" data-delay="1">init: mobile_dev module ✓</span>
-        <span class="loader-line" data-delay="2">init: security_lab module ✓</span>
-        <span class="loader-line" data-delay="3">system ready — welcome</span>
+  <div class="bug-game" id="bugGame" aria-label="Bug clearance mini-game">
+    <div class="bug-game-bg" aria-hidden="true"></div>
+    <div class="bug-game-hud">
+      <div class="bug-game-tip" id="bugTip">
+        <i class="fas fa-crosshairs"></i>
+        <span>Kill bugs to go further</span>
       </div>
+      <div class="bug-game-counter">
+        <span class="prompt">$</span> bugs_remaining: <strong id="bugCount">0</strong>
+      </div>
+    </div>
+    <div class="bug-field" id="bugField"></div>
+    <div class="bug-game-success" id="bugSuccess" hidden>
+      <div class="success-logo">[KD]</div>
+      <p class="success-title">All bugs eliminated</p>
+      <p class="success-sub">Loading portfolio...</p>
+      <div class="success-bar"><div class="success-fill" id="successFill"></div></div>
     </div>
   </div>
 
   <nav class="navbar">
-    <a href="#home" class="nav-logo"><span class="bracket">[</span>KD<span class="bracket">]</span></a>
+    <div class="nav-logo-wrap">
+      <a href="#home" class="nav-logo"><span class="bracket">[</span>KD<span class="bracket">]</span></a>
+      <div class="nav-pendulum" id="navPendulum">
+        <div class="pendulum-swing" id="pendulumSwing">
+          <span class="pendulum-pivot"></span>
+          <span class="pendulum-string"></span>
+          <button type="button" class="pendulum-bob" id="pendulumBob" aria-label="Pull pendulum to toggle dark and light mode" title="Pull to switch theme"></button>
+        </div>
+        <span class="pendulum-hint">Pull to switch theme</span>
+      </div>
+    </div>
     <ul class="nav-links">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#dual">Expertise</a></li>
@@ -75,10 +102,18 @@
           <span class="typed-text" id="typedText">Mobile Pen Tester</span>
           <span class="typed-cursor">|</span>
         </div>
-        <p class="hero-desc">
-        Hi, I'm <strong>Kanojiya Deepak</strong> — a Flutter &amp; Android developer with 2+ years experience.
-        I'm at the beginning of my mobile security journey — with a long-term goal of becoming a Mobile Pen Tester.
-        </p>
+        <div class="hero-intro">
+          <div class="hero-intro-cmd"><span class="prompt">$</span> whoami</div>
+          <p class="hero-intro-lead">
+            Hi, I'm <strong>Kanojiya Deepak</strong>
+          </p>
+          <p>
+            Flutter &amp; Android developer with <span class="intro-accent">2+ years</span> shipping production apps to Play Store &amp; App Store.
+          </p>
+          <p>
+            Early in my mobile security journey — working toward becoming a <span class="intro-accent">Mobile Pen Tester</span>.
+          </p>
+        </div>
 
         <div class="hero-dual">
           <div class="dual-pill dev"><i class="fas fa-code"></i> Build</div>
@@ -103,27 +138,6 @@
 
       <div class="hero-right reveal delay-1">
         <div class="command-center">
-          <div class="profile-wrap">
-            <div class="cyber-radar-ring" aria-hidden="true">
-              <div class="radar-sweep"></div>
-              <div class="radar-blip blip-1"></div>
-              <div class="radar-blip blip-2"></div>
-              <div class="radar-blip blip-3"></div>
-            </div>
-            <div class="profile-ring">
-              <img src="./assets/images/pic.png" alt="Kanojiya Deepak" class="profile-img" width="260" height="260">
-              <div class="ring-scan"></div>
-              <div class="ring-pulse"></div>
-              <div class="scan-line"></div>
-            </div>
-            <div class="status-chip online"><span></span> Available</div>
-            <div class="cyber-orbit" aria-hidden="true">
-              <span class="orbit-icon o1"><i class="fas fa-shield-halved"></i></span>
-              <span class="orbit-icon o2"><i class="fas fa-code"></i></span>
-              <span class="orbit-icon o3"><i class="fas fa-bug"></i></span>
-              <span class="orbit-icon o4"><i class="fas fa-mobile-screen"></i></span>
-            </div>
-          </div>
           <div class="code-editor-anim">
             <div class="editor-header">
               <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
@@ -488,7 +502,6 @@
     <div class="about-grid reveal">
       <div class="about-main">
         <div class="about-top">
-          <img src="./assets/images/pic.png" alt="Kanojiya Deepak" class="about-avatar" width="100" height="100">
           <div>
             <h3>Kanojiya Deepak</h3>
             <p class="role">Mobile Developer · Learning Security</p>
